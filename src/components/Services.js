@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Car, Users, Briefcase, Bus, Shield, MapPin, X, Clock, CheckCircle, Star, Phone } from 'lucide-react';
 
-export const Services = () => {
+export const Services = ({ onBookNow }) => {
   const [selectedService, setSelectedService] = useState(null);
 
   const services = [
@@ -495,9 +495,9 @@ export const Services = () => {
                     whileTap={{ scale: 0.97 }}
                     onClick={() => {
                       setSelectedService(null);
-                      window.location.href = '#contact';
+                      onBookNow?.({ service: selectedService });
                     }}
-                    className={`flex-1 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 bg-gradient-to-r ${selectedService.color} text-white font-bold rounded-xl sm:rounded-2xl shadow-xl transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg relative overflow-hidden group`}
+                    className={`flex-1 px-8 py-5 bg-gradient-to-r ${selectedService.color} text-white font-bold rounded-2xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 text-lg relative overflow-hidden group`}
                     style={{ fontFamily: 'Manrope, sans-serif' }}
                   >
                     {/* Animated background pattern */}

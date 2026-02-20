@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Phone, Mail, MapPin, Send, Clock, Users, Shield, Star } from 'lucide-react';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,12 +11,17 @@ export const Contact = () => {
     service: 'Corporate Car Rental',
     message: ''
   });
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Create mailto link with form data
-    const subject = `Booking Inquiry from ${formData.name} - ${formData.company}`;
-    const body = `
+    // Show thank you popup
+    setShowThankYou(true);
+
+    // Create mailto link with form data (will open after popup)
+    setTimeout(() => {
+      const subject = `Booking Inquiry from ${formData.name} - ${formData.company}`;
+      const body = `
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
@@ -26,8 +31,9 @@ Service Interested: ${formData.service}
 Message:
 ${formData.message}
     `.trim();
-    
-    window.location.href = `mailto:booking.excursiontravel@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = `mailto:booking.excursiontravel@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }, 2000); // Show popup for 2 seconds before opening mailto
   };
 
   const handleChange = (e) => {
@@ -37,85 +43,182 @@ ${formData.message}
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
+      title: '24/7 Support',
       value: '+91 9990-817-615',
-      link: 'tel:+919990817615'
+      link: 'tel:+919990817615',
+      description: 'Round the clock assistance'
     },
     {
       icon: Mail,
-      title: 'Email',
+      title: 'General Inquiries',
       value: 'Contact@excursiontravel.in',
-      link: 'mailto:Contact@excursiontravel.in'
+      link: 'mailto:Contact@excursiontravel.in',
+      description: 'For all business inquiries'
     },
     {
       icon: Mail,
       title: 'Reservations',
       value: 'booking.excursiontravel@gmail.com',
-      link: 'mailto:booking.excursiontravel@gmail.com'
+      link: 'mailto:booking.excursiontravel@gmail.com',
+      description: 'Direct booking requests'
     }
   ];
 
+  const features = [
+    { icon: Clock, text: '24/7 Availability' },
+    { icon: Users, text: 'Expert Team' },
+    { icon: Shield, text: 'Verified Drivers' },
+    { icon: Star, text: 'Premium Service' }
+  ];
+
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] relative overflow-hidden" data-testid="contact-section">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #43E0F8 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+    <section id="contact" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden" data-testid="contact-section">
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-[#0056D2]/20 to-[#43E0F8]/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-tl from-[#43E0F8]/20 to-[#5DFDCB]/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#0056D2]/10 to-[#43E0F8]/10 rounded-full filter blur-2xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Header */}
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+          className="absolute top-20 right-20 w-16 h-16 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-2xl opacity-20"
+        />
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            rotate: [0, -5, 0]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1
+          }}
+          className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-br from-[#43E0F8] to-[#5DFDCB] rounded-full opacity-20"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-24 relative z-10">
+        {/* Hero Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
           data-testid="contact-header"
         >
+          {/* Modern Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-2 bg-[#43E0F8]/20 backdrop-blur-lg rounded-full text-[#43E0F8] text-sm font-semibold mb-6"
-            style={{ fontFamily: 'Manrope, sans-serif' }}
-            data-testid="contact-eyebrow"
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#0056D2]/10 via-[#43E0F8]/10 to-[#0056D2]/10 backdrop-blur-xl rounded-full border border-[#43E0F8]/30 mb-8 shadow-lg"
           >
-            GET IN TOUCH
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+              className="w-3 h-3 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-full"
+            />
+            <span className="text-[#0056D2] font-bold text-sm uppercase tracking-wider" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              GET IN TOUCH
+            </span>
           </motion.div>
-          <h2
-            className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight"
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight"
             style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '-0.02em' }}
             data-testid="contact-title"
           >
-            We are committed to creating <span className="text-[#43E0F8]">unparalleled experiences</span>
-          </h2>
+            Ready to <span className="bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] bg-clip-text text-transparent">Elevate</span> Your Business Travel?
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
+            style={{ fontFamily: 'Manrope, sans-serif' }}
+            data-testid="contact-subtitle"
+          >
+            Connect with our expert team for personalized corporate transportation solutions that drive your business forward.
+          </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        {/* Features Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 + index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="group text-center p-6 bg-white/70 backdrop-blur-xl rounded-2xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="w-12 h-12 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg"
+              >
+                <feature.icon size={20} />
+              </motion.div>
+              <p className="text-gray-900 font-semibold text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                {feature.text}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left - Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 lg:space-y-8"
             data-testid="contact-info-section"
           >
             <div>
-              <h3
-                className="text-3xl font-bold text-white mb-4"
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
                 data-testid="contact-info-title"
               >
-                Let's Start Your Journey
-              </h3>
+                Let's Build Something <span className="text-[#0056D2]">Amazing</span> Together
+              </motion.h2>
               <p
-                className="text-gray-400 text-lg leading-relaxed"
+                className="text-gray-600 text-lg leading-relaxed mb-8"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
                 data-testid="contact-info-description"
               >
-                Reach out to us for professional mobility solutions tailored to your business needs. Our team is ready to assist you 24/7.
+                Whether you need daily corporate transportation, special event services, or airport transfers, our team is ready to provide seamless, professional mobility solutions tailored to your business needs.
               </p>
             </div>
 
@@ -130,53 +233,35 @@ ${formData.message}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 8, scale: 1.02 }}
-                  className="flex items-center gap-4 p-6 bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 hover:border-[#43E0F8]/50 transition-all duration-300 group"
+                  className="group flex items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl border border-white/60 hover:border-[#43E0F8]/50 shadow-lg hover:shadow-xl transition-all duration-500"
                   data-testid={`contact-info-card-${index}`}
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#43E0F8] to-[#0056D2] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <info.icon className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-[#0056D2]/30 transition-all duration-300"
+                  >
+                    <info.icon className="text-white" size={20} />
+                  </motion.div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-gray-900 font-bold text-base sm:text-lg mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>
                       {info.title}
                     </p>
-                    <p className="text-white font-semibold" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <p className="text-[#0056D2] font-semibold hover:text-[#43E0F8] transition-colors duration-300 text-sm sm:text-base truncate" style={{ fontFamily: 'Manrope, sans-serif' }}>
                       {info.value}
                     </p>
+                    <p className="text-gray-500 text-xs sm:text-sm mt-1" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      {info.description}
+                    </p>
                   </div>
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    className="text-gray-400 group-hover:text-[#0056D2] transition-colors duration-300"
+                  >
+                    <Send size={20} />
+                  </motion.div>
                 </motion.a>
               ))}
             </div>
-
-            {/* CTA Box */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-8 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-3xl shadow-2xl"
-              data-testid="contact-cta-box"
-            >
-              <h4
-                className="text-2xl font-bold text-white mb-3"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
-                Need Immediate Assistance?
-              </h4>
-              <p
-                className="text-white/90 mb-6"
-                style={{ fontFamily: 'Manrope, sans-serif' }}
-              >
-                Our dedicated support team is available round the clock to serve you.
-              </p>
-              <a
-                href="tel:+919990817615"
-                className="inline-block w-full text-center px-6 py-3 bg-white text-[#0056D2] font-semibold rounded-full hover:bg-gray-100 transition-all duration-300"
-                style={{ fontFamily: 'Manrope, sans-serif' }}
-                data-testid="contact-call-now-button"
-              >
-                Call Now
-              </a>
-            </motion.div>
           </motion.div>
 
           {/* Right - Contact Form */}
@@ -184,156 +269,261 @@ ${formData.message}
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10"
-            data-testid="contact-form-section"
+            className=""
           >
-            <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    className="block text-white text-sm font-medium mb-2"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-label-name"
-                  >
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#43E0F8] transition-all duration-300"
-                    placeholder="John Doe"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-input-name"
-                  />
-                </div>
-                <div>
-                  <label
-                    className="block text-white text-sm font-medium mb-2"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-label-email"
-                  >
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#43E0F8] transition-all duration-300"
-                    placeholder="john@company.com"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-input-email"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    className="block text-white text-sm font-medium mb-2"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-label-phone"
-                  >
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#43E0F8] transition-all duration-300"
-                    placeholder="+91 9999999999"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-input-phone"
-                  />
-                </div>
-                <div>
-                  <label
-                    className="block text-white text-sm font-medium mb-2"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-label-company"
-                  >
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#43E0F8] transition-all duration-300"
-                    placeholder="Your Company"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="form-input-company"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  className="block text-white text-sm font-medium mb-2"
-                  style={{ fontFamily: 'Manrope, sans-serif' }}
-                  data-testid="form-label-service"
-                >
-                  Service Required *
-                </label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-[#43E0F8] transition-all duration-300"
-                  style={{ fontFamily: 'Manrope, sans-serif' }}
-                  data-testid="form-select-service"
-                >
-                  <option value="Corporate Car Rental" className="bg-[#1E293B]">Corporate Car Rental</option>
-                  <option value="Employee Transport" className="bg-[#1E293B]">Employee Transport</option>
-                  <option value="Executive Transportation" className="bg-[#1E293B]">Executive Transportation</option>
-                  <option value="Group Transportation" className="bg-[#1E293B]">Group Transportation</option>
-                  <option value="Event Mobility" className="bg-[#1E293B]">Event Mobility</option>
-                  <option value="Outstation Travel" className="bg-[#1E293B]">Outstation Travel</option>
-                </select>
-              </div>
-
-              <div>
-                <label
-                  className="block text-white text-sm font-medium mb-2"
-                  style={{ fontFamily: 'Manrope, sans-serif' }}
-                  data-testid="form-label-message"
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#43E0F8] transition-all duration-300 resize-none"
-                  placeholder="Tell us about your requirements..."
-                  style={{ fontFamily: 'Manrope, sans-serif' }}
-                  data-testid="form-textarea-message"
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-[#FE805A] to-[#FE6B47] text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2"
-                style={{ fontFamily: 'Manrope, sans-serif' }}
-                data-testid="form-submit-button"
+            <div className="bg-white/90 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/60 shadow-2xl" data-testid="contact-form-section">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-8"
               >
-                Send Message
-                <Send size={20} />
-              </motion.button>
-            </form>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  Send Us a Message
+                </h3>
+                <p className="text-gray-600" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  Fill out the form below and we'll get back to you within 24 hours
+                </p>
+              </motion.div>
+
+              <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    <label className="block text-gray-900 text-sm font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#0056D2] focus:ring-2 focus:ring-[#0056D2]/20 transition-all duration-300 shadow-sm"
+                      placeholder="John Doe"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <label className="block text-gray-900 text-sm font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#0056D2] focus:ring-2 focus:ring-[#0056D2]/20 transition-all duration-300 shadow-sm"
+                      placeholder="john@company.com"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                    />
+                  </motion.div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <label className="block text-gray-900 text-sm font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#0056D2] focus:ring-2 focus:ring-[#0056D2]/20 transition-all duration-300 shadow-sm"
+                      placeholder="+91 9999999999"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <label className="block text-gray-900 text-sm font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#0056D2] focus:ring-2 focus:ring-[#0056D2]/20 transition-all duration-300 shadow-sm"
+                      placeholder="Your Company"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                    />
+                  </motion.div>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <label className="block text-gray-900 text-sm font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    Service Interested In
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-gray-900 focus:outline-none focus:border-[#0056D2] focus:ring-2 focus:ring-[#0056D2]/20 transition-all duration-300 shadow-sm"
+                    style={{ fontFamily: 'Manrope, sans-serif' }}
+                  >
+                    <option value="Corporate Car Rental">Corporate Car Rental</option>
+                    <option value="Airport Transfer">Airport Transfer</option>
+                    <option value="Event Transportation">Event Transportation</option>
+                    <option value="Luxury Vehicle Rental">Luxury Vehicle Rental</option>
+                    <option value="Tour Packages">Tour Packages</option>
+                  </select>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 }}
+                >
+                  <label className="block text-gray-900 text-sm font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="5"
+                    className="w-full px-4 py-4 bg-white border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#0056D2] focus:ring-2 focus:ring-[#0056D2]/20 transition-all duration-300 shadow-sm resize-none"
+                    placeholder="Tell us about your transportation needs..."
+                    style={{ fontFamily: 'Manrope, sans-serif' }}
+                  />
+                </motion.div>
+
+                <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="w-full px-8 py-5 bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#0056D2] text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg relative overflow-hidden group"
+                  style={{ fontFamily: 'Manrope, sans-serif' }}
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <Send size={20} />
+                    Send Message
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#43E0F8] via-[#0056D2] to-[#43E0F8] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </motion.button>
+              </form>
+            </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Thank You Popup */}
+      <AnimatePresence>
+        {showThankYou && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              onClick={() => setShowThankYou(false)}
+            >
+              {/* Popup */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 text-center relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Success Icon */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                  className="w-20 h-20 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-full flex items-center justify-center mx-auto mb-6"
+                >
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </motion.div>
+
+                {/* Title */}
+                <motion.h3
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-2xl font-bold text-gray-900 mb-4"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  Thank You!
+                </motion.h3>
+
+                {/* Message */}
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-gray-600 mb-6 leading-relaxed"
+                  style={{ fontFamily: 'Manrope, sans-serif' }}
+                >
+                  We have received your message and will contact you soon.
+                </motion.p>
+
+                {/* Auto close indicator */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="text-sm text-gray-500"
+                >
+                  Opening email client...
+                </motion.div>
+
+                {/* Close button */}
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  onClick={() => setShowThankYou(false)}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

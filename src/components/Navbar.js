@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Phone, Mail, Car, Navigation, MapPin, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -15,12 +16,12 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Fleet', href: '#fleet' },
-    { name: 'About', href: '#about' },
-    { name: 'Destinations', href: '#destinations' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Fleet', href: '/fleet' },
+    { name: 'About', href: '/about' },
+    { name: 'Destinations', href: '/destinations' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -37,10 +38,10 @@ export const Navbar = () => {
         data-testid="main-navbar"
       >
         <div className={`max-w-7xl mx-auto transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl' 
-            : 'bg-white/10 backdrop-blur-lg rounded-3xl'
-          } border border-white/20`}>
+          isScrolled
+            ? 'bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#0056D2] backdrop-blur-xl shadow-2xl rounded-3xl'
+            : 'bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#0056D2] backdrop-blur-lg rounded-3xl'
+          } border border-[#43E0F8]/30`}>
           <div className="px-6 py-4 md:px-8 md:py-5">
             <div className="flex items-center justify-between">
               {/* Logo */}
@@ -51,9 +52,7 @@ export const Navbar = () => {
                 data-testid="logo-container"
               >
                 <a href="#home" className="flex items-center">
-                  <div className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                    isScrolled ? 'text-[#0056D2]' : 'text-white'
-                  }`} style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <div className="text-xl md:text-2xl font-bold tracking-tight text-white transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     Excursion Travel
                   </div>
                 </a>
@@ -62,47 +61,45 @@ export const Navbar = () => {
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center gap-6 xl:gap-8">
                 {navLinks.map((link, index) => (
-                  <motion.a
+                  <motion.div
                     key={link.name}
-                    href={link.href}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`text-sm font-medium transition-colors duration-300 hover:text-[#0056D2] relative group whitespace-nowrap ${
-                      isScrolled ? 'text-gray-700' : 'text-white'
-                    }`}
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid={`nav-link-${link.name.toLowerCase()}`}
                   >
-                    {link.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0056D2] group-hover:w-full transition-all duration-300"></span>
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      className="text-sm font-medium transition-colors duration-300 hover:text-[#43E0F8] relative group whitespace-nowrap text-white"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                      data-testid={`nav-link-${link.name.toLowerCase()}`}
+                    >
+                      {link.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0056D2] group-hover:w-full transition-all duration-300"></span>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
 
               {/* CTA Button */}
-              <motion.button
+              <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '#contact'}
-                className="hidden lg:block px-5 py-2.5 xl:px-6 xl:py-3 bg-gradient-to-r from-[#FE805A] to-[#FE6B47] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm"
-                style={{ fontFamily: 'Manrope, sans-serif' }}
-                data-testid="book-now-button"
               >
-                Book Now
-              </motion.button>
+                <Link
+                  to="/contact"
+                  className="hidden lg:block px-5 py-2.5 xl:px-6 xl:py-3 bg-gradient-to-r from-[#FE805A] to-[#FE6B47] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-sm"
+                  style={{ fontFamily: 'Manrope, sans-serif' }}
+                  data-testid="book-now-button"
+                >
+                  Book Now
+                </Link>
+              </motion.div>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`lg:hidden p-2.5 rounded-xl transition-all duration-300 ${
-                  isScrolled 
-                    ? 'text-gray-900 bg-gray-100 hover:bg-gray-200' 
-                    : 'text-white bg-white/10 hover:bg-white/20'
-                }`}
+                className="lg:hidden p-2.5 rounded-xl transition-all duration-300 text-white bg-white/10 hover:bg-white/20"
                 data-testid="mobile-menu-toggle"
               >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -231,9 +228,9 @@ export const Navbar = () => {
                   };
 
                   return (
-                    <motion.a
+                    <Link
                       key={link.name}
-                      href={link.href}
+                      to={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       initial={{ opacity: 0, x: 50 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -281,7 +278,7 @@ export const Navbar = () => {
                           transition={{ duration: 1.5, repeat: Infinity, ease: 'linear', delay: index * 0.2 }}
                         ></motion.div>
                       </div>
-                    </motion.a>
+                    </Link>
                   );
                 })}
                 

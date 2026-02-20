@@ -37,9 +37,9 @@ export const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] relative overflow-hidden" data-testid="why-choose-section">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+    <section className="py-24 bg-white relative overflow-hidden" data-testid="why-choose-section">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, #43E0F8 1px, transparent 0)`,
           backgroundSize: '40px 40px'
@@ -66,14 +66,14 @@ export const WhyChoose = () => {
             WHY CHOOSE EXCURSION TRAVEL
           </motion.div>
           <h2
-            className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight"
             style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '-0.02em' }}
             data-testid="why-choose-title"
           >
-            Setting Standards in <span className="text-[#43E0F8]">Corporate Mobility</span>
+            Setting Standards in <span className="text-[#0056D2]">Corporate Mobility</span>
           </h2>
           <p
-            className="text-lg text-gray-300 max-w-3xl mx-auto"
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
             style={{ fontFamily: 'Manrope, sans-serif' }}
             data-testid="why-choose-description"
           >
@@ -98,14 +98,14 @@ export const WhyChoose = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-[#43E0F8]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#43E0F8]/20"
+              className="group relative bg-white p-8 rounded-3xl border border-gray-200 hover:border-[#0056D2]/30 shadow-sm hover:shadow-xl transition-all duration-500 hover:scale-[1.02]"
               data-testid={`why-choose-card-${index}`}
             >
               {/* Icon */}
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
-                className="w-14 h-14 bg-gradient-to-br from-[#43E0F8] to-[#0056D2] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-[#43E0F8]/50 transition-all duration-300"
+                className="w-14 h-14 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-[#0056D2]/30 transition-all duration-300"
                 data-testid={`why-choose-icon-${index}`}
               >
                 <reason.icon className="text-white" size={26} />
@@ -113,22 +113,22 @@ export const WhyChoose = () => {
 
               {/* Content */}
               <h3
-                className="text-xl font-bold text-white mb-3 group-hover:text-[#43E0F8] transition-colors"
+                className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0056D2] transition-colors"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
                 data-testid={`why-choose-title-${index}`}
               >
                 {reason.title}
               </h3>
               <p
-                className="text-gray-400 leading-relaxed"
+                className="text-gray-600 leading-relaxed"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
                 data-testid={`why-choose-description-${index}`}
               >
                 {reason.description}
               </p>
 
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#43E0F8]/10 to-[#0056D2]/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Hover Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0056D2]/5 to-[#43E0F8]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </motion.div>
@@ -141,16 +141,16 @@ export const WhyChoose = () => {
           className="mt-20 text-center"
           data-testid="why-choose-philosophy"
         >
-          <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg p-12 rounded-3xl border border-white/10">
+          <div className="max-w-4xl mx-auto bg-white p-12 rounded-3xl border border-gray-200 shadow-sm">
             <p
-              className="text-2xl sm:text-3xl font-bold text-white mb-4 italic"
+              className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 italic"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
               data-testid="philosophy-quote"
             >
               "Delivering confidence, continuity, and class in every movement."
             </p>
             <p
-              className="text-lg text-gray-300"
+              className="text-lg text-gray-600"
               style={{ fontFamily: 'Manrope, sans-serif' }}
               data-testid="philosophy-subtitle"
             >
