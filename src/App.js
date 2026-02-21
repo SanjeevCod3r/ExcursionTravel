@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
@@ -8,12 +8,25 @@ import { BlogDetailPage } from "./pages/BlogDetailPage";
 import { AboutPage } from "./pages/AboutPage";
 import { DestinationsPage } from "./pages/DestinationsPage";
 import { ContactPage } from "./pages/ContactPage";
+import { Loader } from "./components/Loader";
 import "@/App.css";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial app loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 3 seconds loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <div className="App">
+        <Loader isLoading={isLoading} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
