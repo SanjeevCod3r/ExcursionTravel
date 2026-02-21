@@ -9,6 +9,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { DestinationsPage } from "./pages/DestinationsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { Loader } from "./components/Loader";
+import FloatingChat from "./components/FloatingChat";
 import "@/App.css";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/destinations" element={<DestinationsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <FloatingChat />
       </div>
     </Router>
   );
