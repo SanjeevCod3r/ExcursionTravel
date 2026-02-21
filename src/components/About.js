@@ -63,9 +63,6 @@ export const About = () => {
             ease: 'easeInOut'
           }}
           className="absolute top-28 right-20 w-20 h-20 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-2xl opacity-15 shadow-2xl"
-          style={{
-            clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
-          }}
         />
         <motion.div
           animate={{
@@ -80,9 +77,6 @@ export const About = () => {
             delay: 1.5
           }}
           className="absolute bottom-36 left-16 w-16 h-16 bg-gradient-to-br from-[#43E0F8] to-[#5DFDCB] rounded-full opacity-20 shadow-xl"
-          style={{
-            clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
-          }}
         />
         <motion.div
           animate={{
@@ -97,9 +91,6 @@ export const About = () => {
             delay: 3
           }}
           className="absolute top-1/3 right-1/4 w-12 h-12 bg-gradient-to-br from-[#5DFDCB] to-[#0056D2] rounded-lg opacity-25 shadow-lg"
-          style={{
-            clipPath: 'polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%)'
-          }}
         />
 
         {/* Floating Particles */}
