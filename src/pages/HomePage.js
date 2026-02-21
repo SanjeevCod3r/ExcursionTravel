@@ -4,7 +4,10 @@ import { Hero } from "../components/Hero";
 import { About } from "../components/About";
 import { Services } from "../components/Services";
 import { WhyChoose } from "../components/WhyChoose";
-import { Stats } from "../components/Stats";
+import { FeaturedPackages } from "../components/FeaturedPackages";
+import { PhotoGallery } from "../components/PhotoGallery";
+import { SpecialOffers } from "../components/SpecialOffers";
+import { TravelTips } from "../components/TravelTips";
 import { Footer } from "../components/Footer";
 import { Booking } from "../components/Booking";
 
@@ -32,8 +35,11 @@ export const HomePage = () => {
       <Hero />
       <About />
       <Services onBookNow={handleBookNow} />
-      <Stats />
       <WhyChoose />
+      <FeaturedPackages />
+      <PhotoGallery />
+      <SpecialOffers />
+      <TravelTips />
       <Footer />
     </div>
   );
