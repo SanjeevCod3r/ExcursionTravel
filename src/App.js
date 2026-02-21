@@ -8,6 +8,7 @@ import { BlogDetailPage } from "./pages/BlogDetailPage";
 import { AboutPage } from "./pages/AboutPage";
 import { DestinationsPage } from "./pages/DestinationsPage";
 import { ContactPage } from "./pages/ContactPage";
+import { PackageDetailPage } from "./pages/PackageDetailPage";
 import { Loader } from "./components/Loader";
 import FloatingChat from "./components/FloatingChat";
 import "@/App.css";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/destinations" element={<DestinationsPage />} />
+          <Route path="/package/:id" element={<PackageDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <FloatingChat />
