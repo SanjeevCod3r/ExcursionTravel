@@ -470,9 +470,7 @@ ${formData.message}
                   transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                   className="w-20 h-20 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <span className="text-white text-4xl font-bold">✓</span>
                 </motion.div>
 
                 {/* Title */}
@@ -513,11 +511,9 @@ ${formData.message}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
                   onClick={() => setShowThankYou(false)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors w-8 h-8 flex items-center justify-center text-xl font-bold"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  ×
                 </motion.button>
               </motion.div>
             </motion.div>
