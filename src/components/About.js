@@ -244,42 +244,24 @@ export const About = () => {
               />
 
               <div className="relative z-10 text-center">
-                {/* Circular Progress Indicator */}
+                {/* Circular Progress Indicator - CSS Based */}
                 <div className="relative w-32 h-32 mx-auto mb-6">
-                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 120 120">
-                    {/* Background Circle */}
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="50"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="8"
-                      className="text-gray-200"
-                    />
-                    {/* Progress Circle */}
-                    <motion.circle
-                      cx="60"
-                      cy="60"
-                      r="50"
-                      fill="none"
-                      stroke="url(#vehiclesGradient)"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 0.85 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 2, delay: 0.8, ease: 'easeOut' }}
-                      className="drop-shadow-lg"
-                    />
-                    {/* Gradient Definition */}
-                    <defs>
-                      <linearGradient id="vehiclesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#0056D2" />
-                        <stop offset="100%" stopColor="#43E0F8" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
+                  {/* Background Circle */}
+                  <div className="absolute inset-0 rounded-full border-8 border-gray-200"></div>
+
+                  {/* Progress Circle */}
+                  <motion.div
+                    className="absolute inset-0 rounded-full border-8 border-transparent"
+                    style={{
+                      background: `conic-gradient(from 0deg, #0056D2 0deg, #43E0F8 85%, transparent 85%)`,
+                      mask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 8px))',
+                      WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 8px))'
+                    }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8, duration: 1 }}
+                  />
 
                   {/* Center Content */}
                   <div className="absolute inset-0 flex items-center justify-center">

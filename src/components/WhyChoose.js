@@ -152,17 +152,6 @@ export const WhyChoose = () => {
             <div className="absolute top-6 left-6 w-16 h-16 bg-gradient-to-br from-[#0056D2]/20 to-[#43E0F8]/20 rounded-full blur-xl" />
             <div className="absolute bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-[#43E0F8]/30 to-[#0056D2]/30 rounded-full blur-lg" />
 
-            {/* Floating Quote Mark */}
-            <motion.div
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute top-8 left-8 text-[#0056D2]/20"
-            >
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
-              </svg>
-            </motion.div>
-
             {/* Main Quote */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
