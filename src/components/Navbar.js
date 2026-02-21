@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, Mail, Car, Navigation, MapPin, Users } from 'lucide-react';
+import { Menu, X, Phone, Mail, Car, Navigation, MapPin, Users, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar = () => {
@@ -19,6 +19,7 @@ export const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
     { name: 'Fleet', href: '/fleet' },
+    { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
     { name: 'Destinations', href: '/destinations' },
     { name: 'Contact', href: '/contact' }
@@ -220,6 +221,7 @@ export const Navbar = () => {
                       case 'Home': return <MapPin size={20} />;
                       case 'Services': return <Car size={20} />;
                       case 'Fleet': return <Users size={20} />;
+                      case 'Blog': return <BookOpen size={20} />;
                       case 'About': return <Navigation size={20} />;
                       case 'Destinations': return <MapPin size={20} />;
                       case 'Contact': return <Phone size={20} />;
