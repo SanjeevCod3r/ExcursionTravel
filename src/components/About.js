@@ -63,6 +63,9 @@ export const About = () => {
             ease: 'easeInOut'
           }}
           className="absolute top-28 right-20 w-20 h-20 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-2xl opacity-15 shadow-2xl"
+          style={{
+            clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
+          }}
         />
         <motion.div
           animate={{
@@ -77,6 +80,9 @@ export const About = () => {
             delay: 1.5
           }}
           className="absolute bottom-36 left-16 w-16 h-16 bg-gradient-to-br from-[#43E0F8] to-[#5DFDCB] rounded-full opacity-20 shadow-xl"
+          style={{
+            clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)'
+          }}
         />
         <motion.div
           animate={{
@@ -91,6 +97,9 @@ export const About = () => {
             delay: 3
           }}
           className="absolute top-1/3 right-1/4 w-12 h-12 bg-gradient-to-br from-[#5DFDCB] to-[#0056D2] rounded-lg opacity-25 shadow-lg"
+          style={{
+            clipPath: 'polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%)'
+          }}
         />
 
         {/* Floating Particles */}
@@ -235,24 +244,42 @@ export const About = () => {
               />
 
               <div className="relative z-10 text-center">
-                {/* Circular Progress Indicator - CSS Based */}
+                {/* Circular Progress Indicator */}
                 <div className="relative w-32 h-32 mx-auto mb-6">
-                  {/* Background Circle */}
-                  <div className="absolute inset-0 rounded-full border-8 border-gray-200"></div>
-
-                  {/* Progress Circle */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full border-8 border-transparent"
-                    style={{
-                      background: `conic-gradient(from 0deg, #0056D2 0deg, #43E0F8 85%, transparent 85%)`,
-                      mask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 8px))',
-                      WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 8px), black calc(100% - 8px))'
-                    }}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                  />
+                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 120 120">
+                    {/* Background Circle */}
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="50"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      className="text-gray-200"
+                    />
+                    {/* Progress Circle */}
+                    <motion.circle
+                      cx="60"
+                      cy="60"
+                      r="50"
+                      fill="none"
+                      stroke="url(#vehiclesGradient)"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 0.85 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 2, delay: 0.8, ease: 'easeOut' }}
+                      className="drop-shadow-lg"
+                    />
+                    {/* Gradient Definition */}
+                    <defs>
+                      <linearGradient id="vehiclesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#0056D2" />
+                        <stop offset="100%" stopColor="#43E0F8" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
 
                   {/* Center Content */}
                   <div className="absolute inset-0 flex items-center justify-center">
