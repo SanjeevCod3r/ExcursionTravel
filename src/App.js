@@ -9,6 +9,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { DestinationsPage } from "./pages/DestinationsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { PackageDetailPage } from "./pages/PackageDetailPage";
+import { ServiceDetail } from "./components/ServiceDetail";
 import { Loader } from "./components/Loader";
 import FloatingChat from "./components/FloatingChat";
 import "@/App.css";
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/service/:id" element={<ServiceDetail />} />
           <Route path="/fleet" element={<FleetPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />

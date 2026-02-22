@@ -7,36 +7,36 @@ export const FeaturedPackages = () => {
   const featuredPackages = [
     {
       id: 1,
-      name: 'Kashmir Paradise',
+      name: 'Golden Triangle Tour',
       region: 'north',
-      image: 'https://images.unsplash.com/photo-1464822759844-d150f38e8cf2?w=800',
-      price: 45000,
+      image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800',
+      price: 25000,
       duration: '6 Days',
-      rating: 4.9,
-      highlights: ['Srinagar', 'Gulmarg', 'Pahalgam', 'Dal Lake', 'Mughal Gardens'],
-      description: 'Experience the breathtaking beauty of Kashmir with houseboats, gardens and snow-capped peaks.'
+      rating: 4.8,
+      highlights: ['Delhi', 'Agra Taj Mahal', 'Jaipur Palace', 'Cultural Heritage', 'Historical Sites'],
+      description: 'Experience India\'s most iconic destinations with the Golden Triangle Tour featuring Delhi, Agra and Jaipur.'
     },
     {
       id: 2,
-      name: 'Goa Beach Escape',
-      region: 'south',
-      image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800',
+      name: 'Himachal Hill Stations',
+      region: 'north',
+      image: 'https://images.unsplash.com/photo-1464822759844-d150f38e8cf2?w=800',
       price: 28000,
-      duration: '5 Days',
-      rating: 4.7,
-      highlights: ['North Goa', 'South Goa', 'Beaches', 'Water Sports', 'Nightlife'],
-      description: 'Relax on pristine beaches, enjoy water sports and experience vibrant Goan culture.'
+      duration: '7 Days',
+      rating: 4.9,
+      highlights: ['Shimla', 'Manali', 'Dharamshala', 'Hill Stations', 'Mountain Views', 'Adventure Activities'],
+      description: 'Discover the pristine beauty of Himachal Pradesh with its charming hill stations and breathtaking landscapes.'
     },
     {
       id: 3,
-      name: 'Rajasthan Heritage',
+      name: 'Rajasthan Desert Safari',
       region: 'west',
-      image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800',
-      price: 35000,
-      duration: '7 Days',
-      rating: 4.8,
-      highlights: ['Jaipur', 'Udaipur', 'Jodhpur', 'Jaisalmer', 'Palace Tours'],
-      description: 'Explore royal palaces, desert safaris and rich cultural heritage of Rajasthan.'
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800',
+      price: 32000,
+      duration: '8 Days',
+      rating: 4.7,
+      highlights: ['Jaisalmer Fort', 'Thar Desert', 'Camel Safari', 'Cultural Villages', 'Desert Camping', 'Royal Heritage'],
+      description: 'Embark on an unforgettable desert safari through Rajasthan\'s golden sands and ancient forts.'
     }
   ];
 
@@ -64,10 +64,10 @@ export const FeaturedPackages = () => {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            Popular Travel Packages
+            Featured Travel Packages
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Discover our most loved destinations and create unforgettable memories with expertly curated travel experiences.
+            Discover our handpicked selection of extraordinary travel experiences across India's most captivating destinations.
           </p>
         </motion.div>
 
