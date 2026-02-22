@@ -89,24 +89,24 @@ export const Services = ({ onBookNow }) => {
         }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <div className="inline-block px-6 py-2 bg-[#0056D2]/10 rounded-full mb-4">
-            <span className="text-[#0056D2] font-semibold text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
+          <div className="inline-block px-4 py-2 bg-[#0056D2]/10 rounded-full mb-4">
+            <span className="text-[#0056D2] font-semibold text-xs sm:text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
               OUR EXPERTISE
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 px-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             Complete Transportation Solutions
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
             From corporate travel to special events, we provide comprehensive mobility solutions tailored to your every need with premium service excellence.
           </p>
         </motion.div>
@@ -117,17 +117,17 @@ export const Services = ({ onBookNow }) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
               whileHover={{ y: -8 }}
-              className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+              className="group bg-white rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -136,36 +136,36 @@ export const Services = ({ onBookNow }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                 {/* Icon Badge */}
-                <div className="absolute top-4 left-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                    <service.icon size={24} className="text-white" />
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.color} rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg`}>
+                    <service.icon size={20} className="sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   {service.shortDescription}
                 </p>
 
                 {/* Features */}
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-4 sm:mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {service.features.slice(0, 3).map((feature, idx) => (
                       <span
                         key={idx}
-                        className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
+                        className="text-xs bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full"
                         style={{ fontFamily: 'Manrope, sans-serif' }}
                       >
                         {feature}
                       </span>
                     ))}
                     {service.features.length > 3 && (
-                      <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+                      <span className="text-xs bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full">
                         +{service.features.length - 3} more
                       </span>
                     )}
@@ -177,17 +177,17 @@ export const Services = ({ onBookNow }) => {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-[#0056D2] to-[#43E0F8] text-white font-bold py-3 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group"
+                    className="w-full bg-gradient-to-r from-[#0056D2] to-[#43E0F8] text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group text-sm sm:text-base"
                     style={{ fontFamily: 'Manrope, sans-serif' }}
                   >
                     <span>View Details</span>
-                    <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={16} />
+                    <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1 w-4 h-4 sm:w-5 sm:h-5" size={16} />
                   </motion.button>
                 </Link>
               </div>
 
               {/* Hover Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500 pointer-events-none`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-2xl sm:rounded-3xl transition-opacity duration-500 pointer-events-none`} />
             </motion.div>
           ))}
         </motion.div>
@@ -198,20 +198,20 @@ export const Services = ({ onBookNow }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-16 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-3xl p-8 text-white"
+          className="text-center mt-12 md:mt-16 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white mx-4 sm:mx-0"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             Ready to Experience Premium Service?
           </h3>
-          <p className="text-lg mb-6 opacity-90" style={{ fontFamily: 'Manrope, sans-serif' }}>
+          <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
             Contact our experts today to customize the perfect transportation solution for your needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => onBookNow?.({})}
-              className="px-8 py-4 bg-white text-[#0056D2] font-semibold rounded-full hover:shadow-xl transition-all duration-300"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#0056D2] font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
               style={{ fontFamily: 'Manrope, sans-serif' }}
             >
               Get Free Consultation
@@ -219,7 +219,7 @@ export const Services = ({ onBookNow }) => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/30 transition-all duration-300"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-sm sm:text-base"
               style={{ fontFamily: 'Manrope, sans-serif' }}
             >
               Call Now: +91 9990-817-615

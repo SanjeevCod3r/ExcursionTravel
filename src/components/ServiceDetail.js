@@ -118,7 +118,7 @@ export const ServiceDetail = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-96 lg:h-[500px] overflow-hidden">
+      <section className="relative h-[60vh] sm:h-96 lg:h-[500px] overflow-hidden">
         <img
           src={service.heroImage}
           alt={service.title}
@@ -137,17 +137,17 @@ export const ServiceDetail = () => {
         </button>
 
         {/* Service Info Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-4">
-              <span className={`bg-gradient-to-r ${service.iconColor} px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2`}>
+            <div className="flex items-center gap-3 mb-2 sm:mb-4">
+              <span className={`bg-gradient-to-r ${service.iconColor} px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2`}>
                 Premium Service
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-4 leading-tight px-1 sm:px-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               {service.title}
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            <p className="text-xs sm:text-base md:text-lg text-gray-200 leading-relaxed max-w-2xl px-1 sm:px-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
               {service.content.description}
             </p>
           </div>
@@ -155,45 +155,45 @@ export const ServiceDetail = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           {/* Service Details */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             {/* Main Content */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white rounded-3xl p-8 shadow-lg"
+                className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg"
               >
-                <h2 className="text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   {service.content.subtitle}
                 </h2>
 
                 {/* Hero Description */}
-                <div className="mb-8 p-6 bg-gradient-to-r from-gray-50 to-white rounded-2xl border-l-4 border-[#0056D2]">
-                  <p className="text-gray-700 text-lg leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <div className="mb-6 sm:mb-8 p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-white rounded-xl sm:rounded-2xl border-l-4 border-[#0056D2]">
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
                     {service.content.description}
                   </p>
                 </div>
 
                 {/* Service Image Gallery */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="relative overflow-hidden rounded-2xl shadow-lg"
+                    className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg"
                   >
                     <img
                       src={service.heroImage}
                       alt={`${service.title} service`}
-                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-36 sm:h-40 md:h-48 object-cover hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
+                      <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                         Premium Service
                       </span>
                     </div>
@@ -203,16 +203,16 @@ export const ServiceDetail = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="relative overflow-hidden rounded-2xl shadow-lg"
+                    className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg"
                   >
                     <img
                       src={service.content.galleryImage || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600'}
                       alt={`${service.title} transportation`}
-                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-36 sm:h-40 md:h-48 object-cover hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="absolute bottom-4 left-4">
-                      <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
+                      <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                         Professional Fleet
                       </span>
                     </div>
@@ -224,56 +224,56 @@ export const ServiceDetail = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="mb-8"
+                  className="mb-6 sm:mb-8"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    <div className="w-8 h-8 bg-[#0056D2] rounded-lg flex items-center justify-center">
-                      <span className="text-white text-lg font-bold">✓</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#0056D2] rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm sm:text-lg font-bold">✓</span>
                     </div>
                     Key Benefits & Features
                   </h3>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-blue-50 to-white rounded-xl border border-blue-100">
-                        <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold">1</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-white rounded-lg sm:rounded-xl border border-blue-100">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold text-sm sm:text-base">1</span>
                         </div>
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Spacious Interiors</h4>
-                          <p className="text-gray-600 text-sm leading-relaxed">Comfortable seating with ample legroom for a pleasant journey experience.</p>
+                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Spacious Interiors</h4>
+                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Comfortable seating with ample legroom for a pleasant journey experience.</p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-green-50 to-white rounded-xl border border-green-100">
-                        <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold">2</span>
+                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-green-50 to-white rounded-lg sm:rounded-xl border border-green-100">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold text-sm sm:text-base">2</span>
                         </div>
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Professional Chauffeurs</h4>
-                          <p className="text-gray-600 text-sm leading-relaxed">Experienced, courteous drivers ensuring safe and timely transportation.</p>
+                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Professional Chauffeurs</h4>
+                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Experienced, courteous drivers ensuring safe and timely transportation.</p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-purple-50 to-white rounded-xl border border-purple-100">
-                        <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold">3</span>
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-white rounded-lg sm:rounded-xl border border-purple-100">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold text-sm sm:text-base">3</span>
                         </div>
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Modern Features</h4>
-                          <p className="text-gray-600 text-sm leading-relaxed">Latest technology including GPS tracking, Wi-Fi, and climate control.</p>
+                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Modern Features</h4>
+                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Latest technology including GPS tracking, Wi-Fi, and climate control.</p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-orange-50 to-white rounded-xl border border-orange-100">
-                        <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold">4</span>
+                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg sm:rounded-xl border border-orange-100">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold text-sm sm:text-base">4</span>
                         </div>
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Flexible Scheduling</h4>
-                          <p className="text-gray-600 text-sm leading-relaxed">Customizable booking options to fit your specific schedule and requirements.</p>
+                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Flexible Scheduling</h4>
+                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Customizable booking options to fit your specific schedule and requirements.</p>
                         </div>
                       </div>
                     </div>
@@ -285,25 +285,25 @@ export const ServiceDetail = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="mb-8"
+                  className="mb-6 sm:mb-8"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    <div className="w-8 h-8 bg-[#43E0F8] rounded-lg flex items-center justify-center">
-                      <span className="text-white text-lg font-bold">📖</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#43E0F8] rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm sm:text-lg font-bold">📖</span>
                     </div>
                     Service Overview
                   </h3>
 
-                  <div className="prose prose-lg max-w-none space-y-6">
+                  <div className="prose prose-lg max-w-none space-y-4 sm:space-y-6">
                     {service.content.details.split('\n\n').map((paragraph, index) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                        className="bg-gray-50 p-6 rounded-2xl border-l-4 border-[#43E0F8]"
+                        className="bg-gray-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border-l-4 border-[#43E0F8]"
                       >
-                        <p className="text-gray-700 leading-relaxed m-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <p className="text-gray-700 leading-relaxed m-0 text-sm sm:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>
                           {paragraph}
                         </p>
                       </motion.div>
@@ -316,35 +316,35 @@ export const ServiceDetail = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="bg-gradient-to-br from-[#0056D2]/5 to-[#43E0F8]/5 p-8 rounded-3xl border border-gray-100"
+                  className="bg-gradient-to-br from-[#0056D2]/5 to-[#43E0F8]/5 p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-gray-100"
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     Why Choose Excursion Travel?
                   </h3>
 
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white text-2xl">🚗</span>
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#0056D2] to-[#43E0F8] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <span className="text-white text-lg sm:text-2xl">🚗</span>
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Premium Fleet</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Well-maintained, luxury vehicles for every occasion</p>
+                      <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Premium Fleet</h4>
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Well-maintained, luxury vehicles for every occasion</p>
                     </div>
 
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#43E0F8] to-[#5DFDCB] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white text-2xl">👨‍✈️</span>
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#43E0F8] to-[#5DFDCB] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <span className="text-white text-lg sm:text-2xl">👨‍✈️</span>
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Expert Drivers</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Professional, experienced chauffeurs you can trust</p>
+                      <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Expert Drivers</h4>
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Professional, experienced chauffeurs you can trust</p>
                     </div>
 
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#5DFDCB] to-[#43E0F8] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <span className="text-white text-2xl">🛡️</span>
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#5DFDCB] to-[#43E0F8] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <span className="text-white text-lg sm:text-2xl">🛡️</span>
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Safety First</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">Your safety and comfort are our top priorities</p>
+                      <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Safety First</h4>
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Your safety and comfort are our top priorities</p>
                     </div>
                   </div>
                 </motion.div>
@@ -352,23 +352,23 @@ export const ServiceDetail = () => {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {/* Features */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-2xl p-6 shadow-lg"
+                className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  <CheckCircle className="text-[#0056D2]" size={20} />
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <CheckCircle className="text-[#0056D2] sm:w-5 sm:h-5" size={18} />
                   Key Features
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {service.content.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-[#0056D2] rounded-full"></div>
-                      <span className="text-gray-700" style={{ fontFamily: 'Manrope, sans-serif' }}>{feature}</span>
+                    <div key={index} className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0056D2] rounded-full"></div>
+                      <span className="text-gray-700 text-sm sm:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -379,16 +379,16 @@ export const ServiceDetail = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className={`bg-gradient-to-br ${service.iconColor} rounded-2xl p-6 text-white shadow-lg`}
+                className={`bg-gradient-to-br ${service.iconColor} rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white shadow-lg`}
               >
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  <Star className="text-white" size={20} />
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <Star className="text-white sm:w-5 sm:h-5" size={18} />
                   Pricing
                 </h3>
-                <p className="text-2xl font-bold mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <p className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   {service.content.pricing}
                 </p>
-                <p className="text-white/90" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-white/90 text-sm sm:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   Custom packages available
                 </p>
               </motion.div>
@@ -398,13 +398,13 @@ export const ServiceDetail = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white rounded-2xl p-6 shadow-lg"
+                className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  <Clock className="text-[#0056D2]" size={20} />
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <Clock className="text-[#0056D2] sm:w-5 sm:h-5" size={18} />
                   Availability
                 </h3>
-                <p className="text-gray-700" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-gray-700 text-sm sm:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   {service.content.availability}
                 </p>
               </motion.div>
@@ -414,21 +414,21 @@ export const ServiceDetail = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-2xl p-6 text-white text-center shadow-lg"
+                className="bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-xl sm:rounded-2xl p-4 sm:p-6 text-white text-center shadow-lg"
               >
-                <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   Ready to Book?
                 </h3>
-                <p className="text-white/90 mb-6" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-white/90 mb-4 sm:mb-6 text-sm sm:text-base" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   Get a custom quote for your requirements
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-white text-[#0056D2] font-bold py-3 px-6 rounded-xl hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-white text-[#0056D2] font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
                   style={{ fontFamily: 'Manrope, sans-serif' }}
                 >
-                  <Phone size={18} />
+                  <Phone size={16} className="sm:w-5 sm:h-5" />
                   <span>Call Now: +91 9990-817-615</span>
                 </motion.button>
               </motion.div>
@@ -441,19 +441,19 @@ export const ServiceDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-3xl p-12 text-white"
+            className="text-center bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white mx-4 sm:mx-0"
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Experience Premium Service Today
             </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
               Contact our experts to customize the perfect transportation solution for your specific needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-[#0056D2] font-semibold rounded-full hover:shadow-xl transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#0056D2] font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
               >
                 Get Free Consultation
@@ -462,7 +462,7 @@ export const ServiceDetail = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/30 transition-all duration-300"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-sm sm:text-base"
                   style={{ fontFamily: 'Manrope, sans-serif' }}
                 >
                   View All Services
