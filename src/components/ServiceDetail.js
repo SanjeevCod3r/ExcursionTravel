@@ -16,9 +16,27 @@ export const ServiceDetail = () => {
       iconColor: 'from-[#0056D2] to-[#43E0F8]',
       content: {
         galleryImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
-        subtitle: 'CORPORATE CAR RENTAL',
-        description: 'Sit back and enjoy – Let our chauffeurs drive you. Excursion Travel Car rental promises a seamless and comfortable journey, be it for client meetings, corporate events, site visits, or airport pick and drops. Our Corporate car rental service in Pan India meets a wide range of business requirements, providing a combination of flexibility, convenience, and professionalism that meets the high standards of contemporary businesses.',
-        details: 'Intended to fit the ever-changing pace of business life, our services offer chauffeur-driven cars that ensure timely arrival and hassle-free travel. Elegant interiors make the journey a work area, enabling professionals to prepare for conferences or make calls while on the move. Further, we can uphold a sophisticated and professional reputation by utilizing top-notch vehicles coupled with well-trained and polite drivers. A Diverse Fleet of economy cars, luxury sedans, SUVs, among others, is bound to leave you spoilt for choice. Our trained chauffeurs, are certain to take you on a journey that is as smooth as it is enjoyable. Luxury cars for the officious, stately sedans for those on important duties, and large coaches and SUVs for large groups of family or friends, Excursion Travel can arrange for the vehicle that suits all your needs and ticks all boxes. Chauffeurs will not only look to getting you to your destination but take care to see that you are not inconvenienced in any way throughout your journey with Excursion Travel. Our trained chauffeurs are everything that Excursion Travel stands for – reliability, safety, comfort, and professionalism. Hassle-Free Service assured from the moment you choose the corporate car rental option. We are committed to securing your comfort, convenience, and safety throughout your journey. Our team can be reached at any time of the day, and our customers can rest assured of having their inquiries answered. While our operational models are standardized as are our administrative processes, there is no template that we fall back on to offer our clients a customized. The requirements and demands of each of our customers is heeded, and our approach, ranging from the choice of the car to the selection of the driver, is guided by our determination to achieve optimum customer satisfaction. We take pride in our ability to organising your journey bearing in mind all your requirements and your preferences.',
+        subtitle: 'Sit back and enjoy – Let our chauffeurs drive you',
+        description: 'Excursion Travel Car rental promises a seamless and comfortable journey, be it for client meetings, corporate events, site visits, or airport pick and drops. Our Corporate car rental service in Pan India meets a wide range of business requirements, providing a combination of flexibility, convenience, and professionalism that meets the high standards of contemporary businesses.',
+        details: 'Intended to fit the ever-changing pace of business life, our services offer chauffeur-driven cars that ensure timely arrival and hassle-free travel. Elegant interiors make the journey a work area, enabling professionals to prepare for conferences or make calls while on the move. Further, we can uphold a sophisticated and professional reputation by utilizing top-notch vehicles coupled with well-trained and polite drivers.',
+        benefits: [
+          {
+            title: 'Diverse Fleet Options',
+            description: 'A Diverse Fleet of economy cars, luxury sedans, SUVs, among others, is bound to leave you spoilt for choice. Our trained chauffeurs, are certain to take you on a journey that is as smooth as it is enjoyable. Luxury cars for the officious, stately sedans for those on important duties, and large coaches and SUVs for large groups of family or friends, Excursion Travel can arrange for the vehicle that suits all your needs and ticks all boxes.'
+          },
+          {
+            title: 'Professional Chauffeurs',
+            description: 'Chauffeurs will not only look to getting you to your destination but take care to see that you are not inconvenienced in any way throughout your journey with Excursion Travel. Our trained chauffeurs are everything that Excursion Travel stands for – reliability, safety, comfort, and professionalism.'
+          },
+          {
+            title: 'Hassle-Free Service',
+            description: 'Hassle-Free Service assured from the moment you choose the corporate car rental option. We are committed to securing your comfort, convenience, and safety throughout your journey. Our team can be reached at any time of the day, and our customers can rest assured of having their inquiries answered.'
+          },
+          {
+            title: 'Customized Solutions',
+            description: 'While our operational models are standardized as are our administrative processes, there is no template that we fall back on to offer our clients a customized. The requirements and demands of each of our customers is heeded, and our approach, ranging from the choice of the car to the selection of the driver, is guided by our determination to achieve optimum customer satisfaction. We take pride in our ability to organising your journey bearing in mind all your requirements and your preferences.'
+          }
+        ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
         pricing: 'Starting from ₹3,500/day',
         availability: 'Available 24/7'
@@ -30,9 +48,27 @@ export const ServiceDetail = () => {
       iconColor: 'from-[#43E0F8] to-[#5DFDCB]',
       content: {
         galleryImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600',
-        subtitle: 'EMPLOYEE TRANSPORT SERVICES',
-        description: 'A smooth ride for your workforce. Looking for safe, comfortable and reliable employee transportation services for your team? Then you have come to the right place. At Excursion Travel, we understand that assurance of reliable transportation services boosts employee morale, and drives productivity at the workplace by increasing punctuality and eliminating anxiety over finding rides.',
-        details: 'Our large fleet of cars and experienced chauffeurs, Excursion Travel can help businesses put in place systems that can effectively save time and energy for the employees, and prevent wastage of valuable resources in mobility planning. Regardless of the size of the workforce, Excursion Travel can ensure a seamless transition to a more efficient and easy transportation system that is beneficial to both employees and businesses. Get all your doubts soundly answered with a presentation. Call us to arrange a presentation for you as per your convenience. Irregular shift is no hurdle to us. Excursion Travel ensures availability of cars to ferry employees regardless of their shift – early morning hours or late-night. Arrangements to pick-up or drop employees at irregular hours are made such that businesses can rest assured of the workforce arriving at the office on time or reaching home comfortable and safe. Excursion Travel expert team is available round-the-clock to assist clients, and answer any queries you may have. Say goodbye to manual duty slips with our digitized usage authorization platform. Users can now sign on to a digital platform for usage authorization, streamlining the approval process and reducing paperwork. This not only saves time but also improves accuracy and accountability. Optimal utilisation of resources ensures efficiency of operations on the one hand, while trimming the number of variable parameters involved in the management equation. Streamlining of operations through use of technology and expert personnel has enabled Excursion Travel to ensure quality service, while preventing incidence of unforeseen disruptions. Tailored solution best describes Excursion Travel employee transport service. We handle end-to-end solutions, and flexibility in back-end operations has allowed us to adopt a technology-agnostic approach to management, thereby enabling us to tailor our model to meet the specific requirements of each client.',
+        subtitle: 'A smooth ride for your workforce',
+        description: 'Looking for safe, comfortable and reliable employee transportation services for your team? Then you have come to the right place. At Excursion Travel, we understand that assurance of reliable transportation services boosts employee morale, and drives productivity at the workplace by increasing punctuality and eliminating anxiety over finding rides.',
+        details: 'Our large fleet of cars and experienced chauffeurs, Excursion Travel can help businesses put in place systems that can effectively save time and energy for the employees, and prevent wastage of valuable resources in mobility planning. Regardless of the size of the workforce, Excursion Travel can ensure a seamless transition to a more efficient and easy transportation system that is beneficial to both employees and businesses. Get all your doubts soundly answered with a presentation. Call us to arrange a presentation for you as per your convenience.',
+        benefits: [
+          {
+            title: '24/7 Availability',
+            description: 'Irregular shift is no hurdle to us. Excursion Travel ensures availability of cars to ferry employees regardless of their shift – early morning hours or late-night. Arrangements to pick-up or drop employees at irregular hours are made such that businesses can rest assured of the workforce arriving at the office on time or reaching home comfortable and safe. Excursion Travel expert team is available round-the-clock to assist clients, and answer any queries you may have.'
+          },
+          {
+            title: 'Digital Platform',
+            description: 'Say goodbye to manual duty slips with our digitized usage authorization platform. Users can now sign on to a digital platform for usage authorization, streamlining the approval process and reducing paperwork. This not only saves time but also improves accuracy and accountability.'
+          },
+          {
+            title: 'Optimal Resource Utilization',
+            description: 'Optimal utilisation of resources ensures efficiency of operations on the one hand, while trimming the number of variable parameters involved in the management equation. Streamlining of operations through use of technology and expert personnel has enabled Excursion Travel to ensure quality service, while preventing incidence of unforeseen disruptions.'
+          },
+          {
+            title: 'Tailored Solutions',
+            description: 'Tailored solution best describes Excursion Travel employee transport service. We handle end-to-end solutions, and flexibility in back-end operations has allowed us to adopt a technology-agnostic approach to management, thereby enabling us to tailor our model to meet the specific requirements of each client.'
+          }
+        ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
         pricing: 'Custom pricing based on routes',
         availability: 'Fixed schedule operations'
@@ -44,9 +80,27 @@ export const ServiceDetail = () => {
       iconColor: 'from-[#FE805A] to-[#FE6B47]',
       content: {
         galleryImage: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600',
-        subtitle: 'EVENT TRANSPORTATION',
-        description: 'Let us steer the wheels on your Big Days! Events, personal or corporate, big or small, entail logistics that require expert hands to handle them, with arranging transport being one of the major tasks that requires meticulous planning and execution. Be it a high-profile wedding, corporate celebrations, an intra-office celebration, arranging vehicles for all invitees to arrive at the venue on time, or ensuring that they return home safely, is a task that may consume a very large portion of time and your energies.',
-        details: 'That is precisely why it is best to leave this task in the hands of experienced mobility managers. Excursion Travel has not only the technical expertise to handle the mandate for ceremonial events, but our people are also acutely sensitive to the cultural sensibilities involved in many such celebratory events. While our trained drivers, with their acute knowledge of the roads try to ensure that you are never late for any of the events or rituals, those working tirelessly at the back-end, arranging trips, finalizing routes and schedules, try to ensure that all contingencies are accounted for. Entrusting the mobility mandate of your events to Excursion Travel will relieve you of all the attendant stress, while leaving you with a bundle of joyous memories. Event-Specific Transportation arrangements guaranteed by Excursion Travel. Once you enlist our assistance for the event, and furnish all the required information about the event, and the number of guests to be expected, you can rid your mind of all worry about the guests arriving at the venue on time. It could be a wedding or a corporate event, our solutions are specific, and tailored to meet the unique demands and necessities of that situation. Our Extensive Fleet offers you significant choice for the cars you want that best suits the event. SUVs that can ferry a larger number of people in just the one trip or luxury sedans for some of the more important guests at the event – you will certainly have plenty to choose from. Liaising With Other Vendors is also within our scope of operations. We work in tandem with the event planners you have chosen to manage the event so we are aware of every last detail of the itinerary of your guests. Professional Drivers will secure your comfort, while being punctual, courteous, and thoroughly professional. Our managers will ensure that you and your guests are assigned the cars of your choice, while our drivers will take care to ensure that, regardless of the chaos on the streets, your journeys are peaceful and comfortable.',
+        subtitle: 'Let us steer the wheels on your Big Days!',
+        description: 'Events, personal or corporate, big or small, entail logistics that require expert hands to handle them, with arranging transport being one of the major tasks that requires meticulous planning and execution. Be it a high-profile wedding, corporate celebrations, an intra-office celebration, arranging vehicles for all invitees to arrive at the venue on time, or ensuring that they return home safely, is a task that may consume a very large portion of time and your energies. That is precisely why it is best to leave this task in the hands of experienced mobility managers.',
+        details: 'Excursion Travel has not only the technical expertise to handle the mandate for ceremonial events, but our people are also acutely sensitive to the cultural sensibilities involved in many such celebratory events. While our trained drivers, with their acute knowledge of the roads try to ensure that you are never late for any of the events or rituals, those working tirelessly at the back-end, arranging trips, finalizing routes and schedules, try to ensure that all contingencies are accounted for. Entrusting the mobility mandate of your events to Excursion Travel will relieve you of all the attendant stress, while leaving you with a bundle of joyous memories.',
+        benefits: [
+          {
+            title: 'Event-Specific Arrangements',
+            description: 'Event-Specific Transportation arrangements guaranteed by Excursion Travel. Once you enlist our assistance for the event, and furnish all the required information about the event, and the number of guests to be expected, you can rid your mind of all worry about the guests arriving at the venue on time. It could be a wedding or a corporate event, our solutions are specific, and tailored to meet the unique demands and necessities of that situation.'
+          },
+          {
+            title: 'Extensive Fleet Options',
+            description: 'Our Extensive Fleet offers you significant choice for the cars you want that best suits the event. SUVs that can ferry a larger number of people in just the one trip or luxury sedans for some of the more important guests at the event – you will certainly have plenty to choose from.'
+          },
+          {
+            title: 'Vendor Coordination',
+            description: 'Liaising With Other Vendors is also within our scope of operations. We work in tandem with the event planners you have chosen to manage the event so we are aware of every last detail of the itinerary of your guests.'
+          },
+          {
+            title: 'Professional Service',
+            description: 'Professional Drivers will secure your comfort, while being punctual, courteous, and thoroughly professional. Our managers will ensure that you and your guests are assigned the cars of your choice, while our drivers will take care to ensure that, regardless of the chaos on the streets, your journeys are peaceful and comfortable.'
+          }
+        ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
         pricing: 'Custom event packages',
         availability: 'Event-based services'
@@ -58,9 +112,27 @@ export const ServiceDetail = () => {
       iconColor: 'from-[#5DFDCB] to-[#43E0F8]',
       content: {
         galleryImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600',
-        subtitle: 'CONFERENCES & DELEGATION',
-        description: 'Conferences & Delegations Transportation Services. Conferences and delegations are quite common in this corporate world. Many corporate organizations arrange these conferences for their firm to promote it. In these conferences, they not only discuss things but also interact or even join in the debate with many other different businesses. So we all can understand how important these conferences and delegations can be for any business.',
-        details: 'That is why Excursion Travel, one of the best providers of car rental services for conferences and delegations offers the best vehicles at your doorstep at an affordable price. Attentive and Experienced Personnel at Excursion Travel will liaise with conference organizers to understand their requirements, and suitably deploy the required number of cars and coaches for ferrying delegates and participants. Similarly, delegates attending any big conference from outside the town can reserve either one or multiple cars – depending on the side of their group – so they can focus entirely on the event, and not worry about getting to the venue on time. Our experienced personnel are adept at tailoring solutions to suit your requirements. Professional Chauffeurs are on stand-by to ferry delegates to the conference, and meetings. Our chauffeurs reflect our ethos rooted in punctuality, professionalism, and sophistication. Cognizant of the value of time where such high-profile events are concerned, our chauffeurs, supported by back-end personnel, meticulously plan and map journeys such that there is maximum convenience and comfort. A Diverse Fleet of Cars to choose from. Excursion Travel fleet of more than 9,000 cars has in its ranks a number of premium luxury sedans, and SUVs, which can be reserved. Delegates, organisers and VIPs, all of them can rest assured of a comfortable ride on board our well-maintained cars. Assistance Guaranteed round-the-clock. Stakeholders can reach out to Excursion Travel personnel at any time of day or night seeking assistance, and rest assured of being lent a patient ear. You may be seeking clarity on billing or you may wish to reschedule your trip or make a fresh reservation besides an existing one, our co-operation is guaranteed.',
+        subtitle: 'Conferences & Delegations Transportation Services',
+        description: 'Conferences and delegations are quite common in this corporate world. Many corporate organizations arrange these conferences for their firm to promote it. In these conferences, they not only discuss things but also interact or even join in the debate with many other different businesses. So we all can understand how important these conferences and delegations can be for any business. That is why Excursion Travel, one of the best providers of car rental services for conferences and delegations offers the best vehicles at your doorstep at an affordable price.',
+        details: 'Attentive and Experienced Personnel at Excursion Travel will liaise with conference organizers to understand their requirements, and suitably deploy the required number of cars and coaches for ferrying delegates and participants to and from the event venue. Similarly, delegates attending any big conference from outside the town can reserve either one or multiple cars – depending on the side of their group – so they can focus entirely on the event, and not worry about getting to the venue on time. Our experienced personnel are adept at tailoring solutions to suit your requirements.',
+        benefits: [
+          {
+            title: 'Expert Coordination',
+            description: 'Attentive and Experienced Personnel at Excursion Travel will liaise with conference organizers to understand their requirements, and suitably deploy the required number of cars and coaches for ferrying delegates and participants to and from the event venue. Similarly, delegates attending any big conference from outside the town can reserve either one or multiple cars – depending on the side of their group – so they can focus entirely on the event, and not worry about getting to the venue on time. Our experienced personnel are adept at tailoring solutions to suit your requirements.'
+          },
+          {
+            title: 'Professional Chauffeurs',
+            description: 'Professional Chauffeurs are on stand-by to ferry delegates to the conference, and meetings. Our chauffeurs reflect our ethos rooted in punctuality, professionalism, and sophistication. Cognizant of the value of time where such high-profile events are concerned, our chauffeurs, supported by back-end personnel, meticulously plan and map journeys such that there is maximum convenience and comfort.'
+          },
+          {
+            title: 'Diverse Fleet Options',
+            description: 'A Diverse Fleet of Cars to choose from. Excursion Travel fleet of more than 9,000 cars has in its ranks a number of premium luxury sedans, and SUVs, which can be reserved. Delegates, organisers and VIPs, all of them can rest assured of a comfortable ride on board our well-maintained cars.'
+          },
+          {
+            title: '24/7 Support',
+            description: 'Assistance Guaranteed round-the-clock. Stakeholders can reach out to Excursion Travel personnel at any time of day or night seeking assistance, and rest assured of being lent a patient ear. You may be seeking clarity on billing or you may wish to reschedule your trip or make a fresh reservation besides an existing one, our co-operation is guaranteed.'
+          }
+        ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
         pricing: 'Custom pricing based on requirements',
         availability: 'On-demand and scheduled'
@@ -72,9 +144,27 @@ export const ServiceDetail = () => {
       iconColor: 'from-[#0056D2] to-[#5DFDCB]',
       content: {
         galleryImage: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600',
-        subtitle: 'WEDDING CAR RENTAL',
-        description: 'Make the special day, extra special with Excursion Travel relax Wedding Car Rentals. Weddings are amongst the most special and memorable occasions in people\'s lives. The entire planning and execution are a huge event in itself, regardless of the size of the weddings. In India, weddings hold a special place in the lives of the bride and groom as well as their families and guests.',
-        details: 'Knowing how important, intimate, and eventful the wedding ceremonies can be, Excursion Travel prides itself in providing exclusive and effortless car rental services that will take a huge part of the planning off the hands of the already occupied family members. From the bride and groom arriving in style, to organizing airport to venue to airport pick-up and drop, to arranging dream wedding transport for the entire bride and groom gang, the team at Excursion Travel will effortlessly handle the planning, logistics and management. Stylish Cars, well maintained and, decked up as suits the occasion, will be at your disposal throughout the duration of the wedding ceremony, including the many events leading up to the big day. You can reserve any number of cars of varying size – sedans, SUVs among others – depending on the preferences of your guest list. Courteous Chauffeurs will ensure that there is no dampening of the celebratory spirit even on the most congested streets leading up to the venue. Excursion Travel trained chauffeurs, with their knowledge of the streets, coupled with their thoroughly professional approach to their jobs, will take care not only to secure your comfort but ensure that you arrive in time for all the auspicious events well ahead of time. Bespoke Packages will fit your needs as well as your tailored suit, for sure. Clients can reserve as many cars as they want, and not necessarily requisition each of them for all the days. Instead, clients can reserve more cars for those days when the number of guests expected is significantly higher while requisitioning fewer cars on other days. This flexibility will ensure that the entire exercise is economical. Our team working tirelessly at the back-end will always be on hand or available on the phone or WhatsApp to accommodate any last-minute changes to the original order. Signature Touches that we add to the cars rented for the big day, even while you are on the move, leave a touch of festivity to the occasion. From complimentary decorations to the car to any special requests, our experts go above and beyond to make it special.',
+        subtitle: 'Make the special day, extra special with Excursion Travel relax Wedding Car Rentals',
+        description: 'Weddings are amongst the most special and memorable occasions in people\'s lives. The entire planning and execution are a huge event in itself, regardless of the size of the weddings. In India, weddings hold a special place in the lives of the bride and groom as well as their families and guests. Knowing how important, intimate, and eventful the wedding ceremonies can be, Excursion Travel prides itself in providing exclusive and effortless car rental services that will take a huge part of the planning off the hands of the already occupied family members.',
+        details: 'From the bride and groom arriving in style, to organizing airport to venue to airport pick-up and drop, to arranging dream wedding transport for the entire bride and groom gang, the team at Excursion Travel will effortlessly handle the planning, logistics and management. Stylish Cars, well maintained and, decked up as suits the occasion, will be at your disposal throughout the duration of the wedding ceremony, including the many events leading up to the big day. You can reserve any number of cars of varying size – sedans, SUVs among others – depending on the preferences of your guest list.',
+        benefits: [
+          {
+            title: 'Stylish Wedding Cars',
+            description: 'Stylish Cars, well maintained and, decked up as suits the occasion, will be at your disposal throughout the duration of the wedding ceremony, including the many events leading up to the big day. You can reserve any number of cars of varying size – sedans, SUVs among others – depending on the preferences of your guest list.'
+          },
+          {
+            title: 'Courteous Chauffeurs',
+            description: 'Courteous Chauffeurs will ensure that there is no dampening of the celebratory spirit even on the most congested streets leading up to the venue. Excursion Travel trained chauffeurs, with their knowledge of the streets, coupled with their thoroughly professional approach to their jobs, will take care not only to secure your comfort but ensure that you arrive in time for all the auspicious events well ahead of time.'
+          },
+          {
+            title: 'Bespoke Packages',
+            description: 'Bespoke Packages will fit your needs as well as your tailored suit, for sure. Clients can reserve as many cars as they want, and not necessarily requisition each of them for all the days. Instead, clients can reserve more cars for those days when the number of guests expected is significantly higher while requisitioning fewer cars on other days. This flexibility will ensure that the entire exercise is economical. Our team working tirelessly at the back-end will always be on hand or available on the phone or WhatsApp to accommodate any last-minute changes to the original order.'
+          },
+          {
+            title: 'Signature Touches',
+            description: 'Signature Touches that we add to the cars rented for the big day, even while you are on the move, leave a touch of festivity to the occasion. From complimentary decorations to the car to any special requests, our experts go above and beyond to make it special.'
+          }
+        ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
         pricing: 'Custom wedding packages',
         availability: 'Event-based services'
@@ -234,49 +324,59 @@ export const ServiceDetail = () => {
                   </h3>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-white rounded-lg sm:rounded-xl border border-blue-100">
+                    {service.content.benefits ? service.content.benefits.map((benefit, index) => (
+                      <div key={index} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-white rounded-lg sm:rounded-xl border border-blue-100">
                         <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold text-sm sm:text-base">1</span>
+                          <Car className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Spacious Interiors</h4>
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Comfortable seating with ample legroom for a pleasant journey experience.</p>
+                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>{benefit.title}</h4>
+                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{benefit.description}</p>
                         </div>
                       </div>
+                    )) : (
+                      <>
+                        <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-blue-50 to-white rounded-lg sm:rounded-xl border border-blue-100">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Car className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Spacious Interiors</h4>
+                            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Comfortable seating with ample legroom for a pleasant journey experience.</p>
+                          </div>
+                        </div>
 
-                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-green-50 to-white rounded-lg sm:rounded-xl border border-green-100">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold text-sm sm:text-base">2</span>
+                        <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-green-50 to-white rounded-lg sm:rounded-xl border border-green-100">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Car className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Professional Chauffeurs</h4>
+                            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Experienced, courteous drivers ensuring safe and timely transportation.</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Professional Chauffeurs</h4>
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Experienced, courteous drivers ensuring safe and timely transportation.</p>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div className="space-y-3 sm:space-y-4">
-                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-white rounded-lg sm:rounded-xl border border-purple-100">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold text-sm sm:text-base">3</span>
+                        <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-white rounded-lg sm:rounded-xl border border-purple-100">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Car className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Modern Features</h4>
+                            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Latest technology including GPS tracking, Wi-Fi, and climate control.</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Modern Features</h4>
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Latest technology including GPS tracking, Wi-Fi, and climate control.</p>
-                        </div>
-                      </div>
 
-                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg sm:rounded-xl border border-orange-100">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold text-sm sm:text-base">4</span>
+                        <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-white rounded-lg sm:rounded-xl border border-orange-100">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Car className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Flexible Scheduling</h4>
+                            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Customizable booking options to fit your specific schedule and requirements.</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base" style={{ fontFamily: 'Montserrat, sans-serif' }}>Flexible Scheduling</h4>
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Customizable booking options to fit your specific schedule and requirements.</p>
-                        </div>
-                      </div>
-                    </div>
+                      </>
+                    )}
                   </div>
                 </motion.div>
 
