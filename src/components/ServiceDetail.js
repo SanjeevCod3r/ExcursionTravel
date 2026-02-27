@@ -272,7 +272,7 @@ export const ServiceDetail = () => {
       {service ? (
         <div className="relative">
           {/* Dramatic Hero Section */}
-          <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24">
             {/* Background Image with Parallax Effect */}
             <div className="absolute inset-0">
               <img
@@ -305,14 +305,14 @@ export const ServiceDetail = () => {
                       <span className="text-sm font-medium">Premium Transportation Service</span>
                     </motion.div>
 
-                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                       {service.title.split(' ').map((word, index) => (
                         <motion.span
                           key={index}
                           initial={{ opacity: 0, y: 50 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                          className="inline-block mr-4"
+                          className="inline-block mr-2 sm:mr-4"
                         >
                           {word}
                         </motion.span>
@@ -358,11 +358,11 @@ export const ServiceDetail = () => {
                     initial={{ opacity: 0, y: 50, rotate: -5 }}
                     animate={{ opacity: 1, y: 0, rotate: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="absolute top-20 right-10 bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl"
+                    className="absolute top-16 sm:top-20 md:top-32 right-2 sm:right-4 md:right-10 bg-white/10 backdrop-blur-lg rounded-3xl p-3 sm:p-4 md:p-6 border border-white/20 shadow-2xl"
                   >
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                      <div className="text-sm text-white/80">Available</div>
+                      <div className="text-lg sm:text-xl md:text-3xl font-bold text-white mb-1">24/7</div>
+                      <div className="text-xs sm:text-sm text-white/80">Available</div>
                     </div>
                   </motion.div>
 
@@ -370,11 +370,11 @@ export const ServiceDetail = () => {
                     initial={{ opacity: 0, y: 50, rotate: 5 }}
                     animate={{ opacity: 1, y: 0, rotate: 0 }}
                     transition={{ duration: 0.8, delay: 1.0 }}
-                    className="absolute bottom-32 left-10 bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl"
+                    className="absolute bottom-24 sm:bottom-32 md:bottom-40 left-2 sm:left-4 md:left-10 bg-white/10 backdrop-blur-lg rounded-3xl p-3 sm:p-4 md:p-6 border border-white/20 shadow-2xl"
                   >
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white mb-1">5★</div>
-                      <div className="text-sm text-white/80">Rating</div>
+                      <div className="text-lg sm:text-xl md:text-3xl font-bold text-white mb-1">5★</div>
+                      <div className="text-xs sm:text-sm text-white/80">Rating</div>
                     </div>
                   </motion.div>
 
@@ -382,20 +382,20 @@ export const ServiceDetail = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl"
+                    className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-8 border border-white/20 shadow-2xl mt-4 sm:mt-8 md:mt-12 lg:mt-0"
                   >
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 bg-green-400 rounded-full" />
-                        <span className="text-white/90">Professional Chauffeurs</span>
+                    <div className="space-y-2 sm:space-y-3 md:space-y-4">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full" />
+                        <span className="text-white/90 text-xs sm:text-sm md:text-base">Professional Chauffeurs</span>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 bg-blue-400 rounded-full" />
-                        <span className="text-white/90">Premium Fleet</span>
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full" />
+                        <span className="text-white/90 text-xs sm:text-sm md:text-base">Premium Fleet</span>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 bg-purple-400 rounded-full" />
-                        <span className="text-white/90">24/7 Support</span>
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full" />
+                        <span className="text-white/90 text-xs sm:text-sm md:text-base">24/7 Support</span>
                       </div>
                     </div>
                   </motion.div>
@@ -429,10 +429,10 @@ export const ServiceDetail = () => {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   Your Journey With Us
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   Experience seamless transportation from start to finish with our comprehensive service approach
                 </p>
               </motion.div>
@@ -476,31 +476,31 @@ export const ServiceDetail = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${
+                      className={`flex flex-col lg:flex-row items-center gap-6 lg:gap-16 ${
                         index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                       }`}
                     >
                       {/* Content Side */}
-                      <div className={`flex-1 text-center lg:text-${index % 2 === 0 ? 'left' : 'right'}`}>
-                        <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${item.color} text-white text-2xl mb-6 mx-auto lg:mx-0`}>
+                      <div className="flex-1 text-center lg:text-left w-full lg:w-auto">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${item.color} text-white text-lg sm:text-2xl mb-4 sm:mb-6 mx-auto lg:mx-0`}>
                           {item.icon}
                         </div>
-                        <h3 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                           {item.title}
                         </h3>
-                        <p className="text-lg text-gray-600 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
                           {item.description}
                         </p>
                       </div>
 
                       {/* Timeline Connector */}
                       <div className="hidden lg:flex flex-col items-center">
-                        <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${item.color} mb-2`} />
-                        <div className="w-1 h-24 bg-gradient-to-b from-gray-300 to-transparent" />
+                        <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r ${item.color} mb-2`} />
+                        <div className="w-1 h-20 sm:h-24 bg-gradient-to-b from-gray-300 to-transparent" />
                       </div>
 
                       {/* Step Number */}
-                      <div className={`hidden lg:flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r ${item.color} text-white text-2xl font-bold shadow-lg`}>
+                      <div className={`hidden lg:flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r ${item.color} text-white text-lg sm:text-2xl font-bold shadow-lg`}>
                         {item.step}
                       </div>
                     </motion.div>
@@ -520,10 +520,10 @@ export const ServiceDetail = () => {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   Why Choose Us
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   Discover the features that make our transportation service the preferred choice for discerning clients
                 </p>
               </motion.div>
@@ -546,28 +546,28 @@ export const ServiceDetail = () => {
                       whileInView={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
+                      className="group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
                     >
                       {/* Background Gradient */}
                       <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
                       {/* Content */}
                       <div className="relative z-10">
-                        <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${colors[index]} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="w-8 h-8" />
+                        <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${colors[index]} text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="w-6 h-6 sm:w-8 sm:h-8" />
                         </div>
 
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                           {benefit.title}
                         </h3>
 
-                        <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
                           {benefit.description}
                         </p>
                       </div>
 
                       {/* Hover Effect Border */}
-                      <div className={`absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r group-hover:${colors[index]} transition-all duration-500`} />
+                      <div className={`absolute inset-0 rounded-2xl sm:rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r group-hover:${colors[index]} transition-all duration-500`} />
                     </motion.div>
                   );
                 })}
@@ -585,10 +585,10 @@ export const ServiceDetail = () => {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   Our Premium Fleet
                 </h2>
-                <p className="text-xl text-white/80 max-w-3xl mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   Experience luxury and comfort with our meticulously maintained vehicles, designed for your ultimate satisfaction
                 </p>
               </motion.div>
@@ -602,19 +602,19 @@ export const ServiceDetail = () => {
                     whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500"
+                    className="group relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500"
                   >
                     <img
                       src={image}
                       alt={`${service.title} fleet ${index + 1}`}
-                      className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-60 sm:h-72 md:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-6 left-6 right-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className="text-white text-xl font-bold mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 transform translate-y-2 sm:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-white text-lg sm:text-xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                         Premium Experience
                       </h3>
-                      <p className="text-white/90 text-sm">
+                      <p className="text-white/90 text-xs sm:text-sm">
                         Luxury transportation redefined
                       </p>
                     </div>
@@ -635,27 +635,27 @@ export const ServiceDetail = () => {
                   viewport={{ once: true }}
                   className="space-y-8"
                 >
-                  <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     Ready to Experience Luxury?
                   </h2>
-                  <p className="text-xl text-white/90 mb-8 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 leading-relaxed px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
                     Book your premium transportation service today and discover why discerning clients choose Excursion Travel for all their mobility needs.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-white text-[#0056D2] px-10 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
+                      className="bg-white text-[#0056D2] px-8 sm:px-10 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center"
                     >
-                      <Phone className="w-5 h-5" />
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                       Call Now: +91 9990-817-615
                     </motion.button>
 
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="border-2 border-white text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-[#0056D2] transition-all duration-300"
+                      className="border-2 border-white text-white px-8 sm:px-10 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg hover:bg-white hover:text-[#0056D2] transition-all duration-300 w-full sm:w-auto text-center"
                     >
                       Get Quote
                     </motion.button>
@@ -695,9 +695,9 @@ export const ServiceDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             onClick={() => navigate('/services')}
-            className="fixed top-24 left-6 z-50 bg-white/90 backdrop-blur-md hover:bg-white text-gray-800 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="hidden sm:block fixed top-20 sm:top-24 left-4 sm:left-6 z-50 bg-white/90 backdrop-blur-md hover:bg-white text-gray-800 p-3 sm:p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
           >
-            <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
+            <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-x-1 transition-transform duration-300" />
           </motion.button>
         </div>
       ) : (
