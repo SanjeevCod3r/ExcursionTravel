@@ -200,7 +200,7 @@ export const Footer = () => {
             </p>
             <div className="flex gap-6">
               <a
-                href="#"
+                href="/privacy"
                 className="text-gray-400 hover:text-[#43E0F8] transition-colors text-sm"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
                 data-testid="footer-privacy-policy"
@@ -208,7 +208,7 @@ export const Footer = () => {
                 Privacy Policy
               </a>
               <a
-                href="#"
+                href="/terms"
                 className="text-gray-400 hover:text-[#43E0F8] transition-colors text-sm"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
                 data-testid="footer-terms-conditions"

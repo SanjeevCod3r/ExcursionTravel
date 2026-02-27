@@ -8,7 +8,9 @@ import { BlogDetailPage } from "./pages/BlogDetailPage";
 import { AboutPage } from "./pages/AboutPage";
 import { DestinationsPage } from "./pages/DestinationsPage";
 import { ContactPage } from "./pages/ContactPage";
+import { TermsPage } from "./pages/TermsPage";
 import { PackageDetailPage } from "./pages/PackageDetailPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 import { ServiceDetail } from "./components/ServiceDetail";
 import { Loader } from "./components/Loader";
 import FloatingChat from "./components/FloatingChat";
@@ -41,6 +43,8 @@ function App() {
           <Route path="/destinations" element={<DestinationsPage />} />
           <Route path="/package/:id" element={<PackageDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
         <FloatingChat />
       </div>

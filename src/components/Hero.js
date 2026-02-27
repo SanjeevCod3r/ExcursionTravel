@@ -6,12 +6,10 @@ export const Hero = () => {
     <div id="home" className="relative h-screen overflow-hidden" data-testid="hero-section">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/asset/Home%20Page%20Hero%20Image.png)',
-            backgroundPosition: 'center'
-          }}
+        <img
+          src="/asset/Home Page Hero Image.png"
+          alt="Hero Background"
+          className="w-full h-full object-cover"
         />
         {/* Dark Overlay with Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />

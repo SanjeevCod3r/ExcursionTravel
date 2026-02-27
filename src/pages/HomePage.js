@@ -5,9 +5,9 @@ import { About } from "../components/About";
 import { Services } from "../components/Services";
 import { WhyChoose } from "../components/WhyChoose";
 import { FeaturedPackages } from "../components/FeaturedPackages";
-import { PhotoGallery } from "../components/PhotoGallery";
+import { DestinationShowcase } from "../components/DestinationShowcase";
 import { SpecialOffers } from "../components/SpecialOffers";
-import { TravelTips } from "../components/TravelTips";
+import { FleetShowcase } from "../components/FleetShowcase";
 import { Footer } from "../components/Footer";
 import { Booking } from "../components/Booking";
 
@@ -37,9 +37,9 @@ export const HomePage = () => {
       <Services onBookNow={handleBookNow} />
       <WhyChoose />
       <FeaturedPackages />
-      <PhotoGallery />
+      <DestinationShowcase />
       <SpecialOffers />
-      <TravelTips />
+      <FleetShowcase onBookNow={handleBookNow} />
       <Footer />
     </div>
   );
