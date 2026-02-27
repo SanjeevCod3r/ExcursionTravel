@@ -11,7 +11,7 @@ export const Services = ({ onBookNow }) => {
       title: 'Corporate Car Rental',
       shortDescription: 'Premium vehicles with professional chauffeurs for executive travel and business meetings.',
       color: 'from-[#0056D2] to-[#43E0F8]',
-      image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600',
+      image: '/asset/Corporate Car Rental Image 2.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
     },
     {
@@ -20,7 +20,7 @@ export const Services = ({ onBookNow }) => {
       title: 'Employee Transport Services',
       shortDescription: 'Reliable and comfortable daily commute solutions for your workforce across all locations.',
       color: 'from-[#43E0F8] to-[#5DFDCB]',
-      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600',
+      image: '/asset/Employee Transport Services Image 2.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
     },
     {
@@ -29,7 +29,7 @@ export const Services = ({ onBookNow }) => {
       title: 'Event Transportation',
       shortDescription: 'Comprehensive transportation management for corporate events, conferences, and roadshows.',
       color: 'from-[#FE805A] to-[#FE6B47]',
-      image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600',
+      image: '/asset/Event Transportation Image 1.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
     },
     {
@@ -38,7 +38,7 @@ export const Services = ({ onBookNow }) => {
       title: 'Conferences & Delegation',
       shortDescription: 'Luxury fleet with experienced chauffeurs for C-suite executives and VIP guests.',
       color: 'from-[#5DFDCB] to-[#43E0F8]',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600',
+      image: '/asset/Conferences & Delegation Image 1.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
     },
     {
@@ -47,7 +47,7 @@ export const Services = ({ onBookNow }) => {
       title: 'Wedding Car Rental',
       shortDescription: 'Luxury sedans and coaches for conferences, events, and corporate outings with flexible scheduling.',
       color: 'from-[#0056D2] to-[#5DFDCB]',
-      image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600',
+      image: '/asset/Wedding Car Rental Image 1.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
     },
     {

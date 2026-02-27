@@ -278,21 +278,20 @@ export const ServiceDetail = () => {
               <img
                 src={service.heroImage}
                 alt={`${service.title} Hero`}
-                className="w-full h-full object-cover transform scale-110"
-                style={{ filter: 'brightness(0.4) contrast(1.2)' }}
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-transparent" />
             </div>
 
             {/* Floating Content Cards */}
             <div className="relative z-10 container mx-auto px-6 lg:px-12">
-              <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
-                {/* Left Content */}
+              <div className="flex justify-center items-center min-h-screen">
+                {/* Centered Content */}
                 <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.2 }}
-                  className="text-white space-y-8"
+                  className="text-white text-center space-y-8 max-w-4xl"
                 >
                   <div className="space-y-4">
                     <motion.div
@@ -324,7 +323,7 @@ export const ServiceDetail = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-xl"
+                    className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed max-w-3xl mx-auto px-6 py-4 bg-gradient-to-r from-white/30 to-white/20 rounded-2xl border-2 border-white/30 shadow-xl font-semibold"
                     style={{ fontFamily: 'Manrope, sans-serif' }}
                   >
                     {service.content.subtitle}
@@ -334,7 +333,7 @@ export const ServiceDetail = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.4 }}
-                    className="flex flex-col sm:flex-row gap-4"
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
                   >
                     <button className="bg-gradient-to-r from-[#0056D2] to-[#003DA6] hover:from-[#0041A8] hover:to-[#002D80] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center gap-3">
                       <Phone className="w-5 h-5" />
@@ -343,61 +342,6 @@ export const ServiceDetail = () => {
                     <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
                       Learn More
                     </button>
-                  </motion.div>
-                </motion.div>
-
-                {/* Right Floating Cards */}
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                  className="relative"
-                >
-                  {/* Floating Service Stats */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 50, rotate: -5 }}
-                    animate={{ opacity: 1, y: 0, rotate: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="absolute top-16 sm:top-20 md:top-32 right-2 sm:right-4 md:right-10 bg-white/10 backdrop-blur-lg rounded-3xl p-3 sm:p-4 md:p-6 border border-white/20 shadow-2xl"
-                  >
-                    <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-3xl font-bold text-white mb-1">24/7</div>
-                      <div className="text-xs sm:text-sm text-white/80">Available</div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 50, rotate: 5 }}
-                    animate={{ opacity: 1, y: 0, rotate: 0 }}
-                    transition={{ duration: 0.8, delay: 1.0 }}
-                    className="absolute bottom-24 sm:bottom-32 md:bottom-40 left-2 sm:left-4 md:left-10 bg-white/10 backdrop-blur-lg rounded-3xl p-3 sm:p-4 md:p-6 border border-white/20 shadow-2xl"
-                  >
-                    <div className="text-center">
-                      <div className="text-lg sm:text-xl md:text-3xl font-bold text-white mb-1">5★</div>
-                      <div className="text-xs sm:text-sm text-white/80">Rating</div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                    className="bg-white/10 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-8 border border-white/20 shadow-2xl mt-4 sm:mt-8 md:mt-12 lg:mt-0"
-                  >
-                    <div className="space-y-2 sm:space-y-3 md:space-y-4">
-                      <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full" />
-                        <span className="text-white/90 text-xs sm:text-sm md:text-base">Professional Chauffeurs</span>
-                      </div>
-                      <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full" />
-                        <span className="text-white/90 text-xs sm:text-sm md:text-base">Premium Fleet</span>
-                      </div>
-                      <div className="flex items-center gap-2 sm:gap-3">
-                        <div className="w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full" />
-                        <span className="text-white/90 text-xs sm:text-sm md:text-base">24/7 Support</span>
-                      </div>
-                    </div>
                   </motion.div>
                 </motion.div>
               </div>
