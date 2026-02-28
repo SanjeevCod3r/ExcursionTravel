@@ -25,19 +25,19 @@ export const Fleet = ({ onBookNow }) => {
               name: 'Maruti Suzuki Dzire',
               seats: '4 Passengers',
               features: ['Fuel Efficient', 'Air Conditioning', 'Comfortable Ride'],
-              image: 'https://images.unsplash.com/photo-1552519507-cf6b0c2e7e81?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Maruti Suzuki Dzire.png'
             },
             {
               name: 'Hyundai Aura',
               seats: '4 Passengers',
               features: ['Modern Interior', 'Smooth Engine', 'Good Mileage'],
-              image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Hyundai Aura.png'
             },
             {
               name: 'Honda Amaze',
               seats: '4 Passengers',
               features: ['Reliable Performance', 'Spacious Cabin', 'Advanced Safety'],
-              image: 'https://images.unsplash.com/photo-1552519507-cf6b0c2e7e81?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Honda Amaze.png'
             }
           ]
         },
@@ -48,19 +48,19 @@ export const Fleet = ({ onBookNow }) => {
               name: 'Maruti Suzuki Ciaz',
               seats: '4 Passengers',
               features: ['Premium Interior', 'Advanced Features', 'Comfortable Seating'],
-              image: 'https://images.unsplash.com/photo-1552519507-cf6b0c2e7e81?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Maruti Suzuki Ciaz.png'
             },
             {
               name: 'Hyundai Verna',
               seats: '4 Passengers',
               features: ['Modern Design', 'Superior Comfort', 'Tech Features'],
-              image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Hyundai Verna.png'
             },
             {
               name: 'Honda City',
               seats: '4 Passengers',
               features: ['Luxury Feel', 'Advanced Safety', 'Smooth Ride'],
-              image: 'https://images.unsplash.com/photo-1552519507-cf6b0c2e7e81?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Honda City.png'
             }
           ]
         },
@@ -71,19 +71,19 @@ export const Fleet = ({ onBookNow }) => {
               name: 'Toyota Camry',
               seats: '4 Passengers',
               features: ['Executive Comfort', 'Premium Audio', 'Advanced Tech'],
-              image: 'https://images.unsplash.com/photo-1634981297377-ffce46cb28e4?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Toyota Camry.png'
             },
             {
               name: 'Corolla Altis',
               seats: '4 Passengers',
               features: ['Hybrid Option', 'Superior Comfort', 'Reliable Performance'],
-              image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Corolla Altis.png'
             },
             {
               name: 'Mercedes E Class',
               seats: '4 Passengers',
               features: ['Luxury Experience', 'Premium Interior', 'Advanced Safety'],
-              image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Mercedes E Class.png'
             }
           ]
         }
@@ -98,19 +98,19 @@ export const Fleet = ({ onBookNow }) => {
           name: 'Ertiga',
           seats: '7 Passengers',
           features: ['Spacious Interior', 'Family Friendly', 'Good Ground Clearance'],
-          image: 'https://images.unsplash.com/photo-1634981297325-fbb675134d5a?crop=entropy&cs=srgb&fm=jpg&q=85'
+          image: '/asset/Ertiga.png'
         },
         {
           name: 'Kia Carens',
           seats: '7 Passengers',
           features: ['Modern Design', 'Connected Car Tech', 'Comfortable Ride'],
-          image: 'https://images.unsplash.com/photo-1634981297325-fbb675134d5a?crop=entropy&cs=srgb&fm=jpg&q=85'
+          image: '/asset/Kia Carens.png'
         },
         {
           name: 'Maruti XL6',
           seats: '6 Passengers',
           features: ['Premium Feel', 'Spacious Cabin', 'Advanced Features'],
-          image: 'https://images.unsplash.com/photo-1634981297325-fbb675134d5a?crop=entropy&cs=srgb&fm=jpg&q=85'
+          image: '/asset/Maruti XL6.png'
         }
       ]
     },
@@ -126,19 +126,19 @@ export const Fleet = ({ onBookNow }) => {
               name: 'Toyota Crysta',
               seats: '7 Passengers',
               features: ['Premium Comfort', 'Advanced Safety', 'Spacious Interior'],
-              image: 'https://images.unsplash.com/photo-1634981297325-fbb675134d5a?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Toyota Crysta.png'
             },
             {
               name: 'Toyota Innova Hycross',
               seats: '8 Passengers',
               features: ['Hybrid Technology', 'Luxury Seating', 'Advanced Features'],
-              image: 'https://images.unsplash.com/photo-1634981297325-fbb675134d5a?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Toyota Innova Hycross.png'
             },
             {
               name: 'Toyota Fortuner',
               seats: '7 Passengers',
               features: ['Powerful Engine', 'Off-road Capability', 'Premium Interior'],
-              image: 'https://images.unsplash.com/photo-1634981297325-fbb675134d5a?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Toyota Fortuner.png'
             }
           ]
         },
@@ -149,13 +149,13 @@ export const Fleet = ({ onBookNow }) => {
               name: 'Mercedes GLS',
               seats: '7 Passengers',
               features: ['Ultimate Luxury', 'Advanced Tech', 'Executive Comfort'],
-              image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Mercedes GLS.png'
             },
             {
               name: 'Audi Q7',
               seats: '7 Passengers',
               features: ['German Engineering', 'Premium Audio', 'Luxury Experience'],
-              image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?crop=entropy&cs=srgb&fm=jpg&q=85'
+              image: '/asset/Audi Q7.png'
             }
           ]
         }
@@ -170,19 +170,19 @@ export const Fleet = ({ onBookNow }) => {
           name: 'Toyota Vellfire',
           seats: '7 Passengers',
           features: ['Luxury Van Experience', 'Premium Interior', 'Advanced Comfort'],
-          image: 'https://images.pexels.com/photos/29586609/pexels-photo-29586609.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/Toyota Vellfire.png'
         },
         {
           name: 'Mercedes Sprinter',
           seats: '12 Passengers',
           features: ['Commercial Grade', 'Spacious Interior', 'Professional Service'],
-          image: 'https://images.pexels.com/photos/29586609/pexels-photo-29586609.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/Mercedes Sprinter.png'
         },
         {
           name: 'Toyota Commuter',
           seats: '15 Passengers',
           features: ['Large Capacity', 'Comfortable Seating', 'Reliable Performance'],
-          image: 'https://images.pexels.com/photos/29586609/pexels-photo-29586609.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/Toyota Commuter.png'
         }
       ]
     },
@@ -195,13 +195,13 @@ export const Fleet = ({ onBookNow }) => {
           name: 'Tempo Traveller',
           seats: '12-15 Passengers',
           features: ['Spacious Interior', 'Tour Ready', 'Comfortable Journey'],
-          image: 'https://images.pexels.com/photos/3789823/pexels-photo-3789823.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/Tempo Traveller.png'
         },
         {
           name: 'Force Urbania',
           seats: '13 Passengers',
           features: ['Modern Design', 'AC Comfort', 'Reliable for Long Trips'],
-          image: 'https://images.pexels.com/photos/3789823/pexels-photo-3789823.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/Tempo Traveller.png'
         }
       ]
     },
@@ -214,13 +214,13 @@ export const Fleet = ({ onBookNow }) => {
           name: '43-Seater Luxury Volvo',
           seats: '43 Passengers',
           features: ['Luxury Seating', 'Entertainment System', 'Premium Comfort'],
-          image: 'https://images.pexels.com/photos/29586609/pexels-photo-29586609.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/43-Seater Luxury Volvo.png'
         },
         {
           name: '38-Seater Luxury Volvo',
           seats: '38 Passengers',
           features: ['Executive Comfort', 'Modern Amenities', 'Professional Service'],
-          image: 'https://images.pexels.com/photos/29586609/pexels-photo-29586609.jpeg?auto=compress&cs=tinysrgb&w=800'
+          image: '/asset/38-Seater Luxury Volvo.PNG'
         }
       ]
     }
