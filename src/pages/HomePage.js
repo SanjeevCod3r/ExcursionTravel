@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { About } from "../components/About";
+import { AboutShowcase } from "../components/AboutShowcase";
 import { Services } from "../components/Services";
 import { WhyChoose } from "../components/WhyChoose";
 import { FeaturedPackages } from "../components/FeaturedPackages";
@@ -34,7 +34,7 @@ export const HomePage = () => {
     <div className="HomePage">
       <Navbar />
       <Hero />
-      <About />
+      <AboutShowcase />
       <Services onBookNow={handleBookNow} />
       <WhyChoose />
       <FeaturedPackages />
