@@ -28,22 +28,26 @@ export const ServiceDetail = () => {
           {
             title: 'Diverse Fleet Options',
             description: 'A Diverse Fleet of economy cars, luxury sedans, SUVs, among others, is bound to leave you spoilt for choice. Our trained chauffeurs, are certain to take you on a journey that is as smooth as it is enjoyable. Luxury cars for the officious, stately sedans for those on important duties, and large coaches and SUVs for large groups of family or friends, Excursion Travel can arrange for the vehicle that suits all your needs and ticks all boxes.',
-            icon: Star
+            icon: Star,
+            image: '/asset/Corporate Car Rental Image 1.jpeg'
           },
           {
             title: 'Professional Chauffeurs',
             description: 'Chauffeurs will not only look to getting you to your destination but take care to see that you are not inconvenienced in any way throughout your journey with Excursion Travel. Our trained chauffeurs are everything that Excursion Travel stands for – reliability, safety, comfort, and professionalism.',
-            icon: Users
+            icon: Users,
+            image: '/asset/Corporate Car Rental Image 2.jpeg'
           },
           {
             title: 'Hassle-Free Service',
             description: 'Hassle-Free Service assured from the moment you choose the corporate car rental option. We are committed to securing your comfort, convenience, and safety throughout your journey. Our team can be reached at any time of the day, and our customers can rest assured of having their inquiries answered.',
-            icon: CheckCircle
+            icon: CheckCircle,
+            image: '/asset/Corporate Car Rental Image 3.jpeg'
           },
           {
             title: 'Customized Solutions',
             description: 'While our operational models are standardized as are our administrative processes, there is no template that we fall back on to offer our clients a customized. The requirements and demands of each of our customers is heeded, and our approach, ranging from the choice of the car to the selection of the driver, is guided by our determination to achieve optimum customer satisfaction. We take pride in our ability to organising your journey bearing in mind all your requirements and your preferences.',
-            icon: Heart
+            icon: Heart,
+            image: '/asset/Corporate Car Rental Image 4.png'
           }
         ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
@@ -68,22 +72,26 @@ export const ServiceDetail = () => {
           {
             title: '24/7 Availability',
             description: 'Irregular shift is no hurdle to us. Excursion Travel ensures availability of cars to ferry employees regardless of their shift – early morning hours or late-night. Arrangements to pick-up or drop employees at irregular hours are made such that businesses can rest assured of the workforce arriving at the office on time or reaching home comfortable and safe. Excursion Travel expert team is available round-the-clock to assist clients, and answer any queries you may have.',
-            icon: Clock
+            icon: Clock,
+            image: '/asset/Employee Transport Services Image 1.jpeg'
           },
           {
             title: 'Digital Platform',
             description: 'Say goodbye to manual duty slips with our digitized usage authorization platform. Users can now sign on to a digital platform for usage authorization, streamlining the approval process and reducing paperwork. This not only saves time but also improves accuracy and accountability.',
-            icon: CheckCircle
+            icon: CheckCircle,
+            image: '/asset/Employee Transport Services Image 2.jpeg'
           },
           {
             title: 'Optimal Resource Utilization',
             description: 'Optimal utilisation of resources ensures efficiency of operations on the one hand, while trimming the number of variable parameters involved in the management equation. Streamlining of operations through use of technology and expert personnel has enabled Excursion Travel to ensure quality service, while preventing incidence of unforeseen disruptions.',
-            icon: Star
+            icon: Star,
+            image: '/asset/Employee Transport Services Image 3.jpeg'
           },
           {
             title: 'Tailored Solutions',
             description: 'Tailored solution best describes Excursion Travel employee transport service. We handle end-to-end solutions, and flexibility in back-end operations has allowed us to adopt a technology-agnostic approach to management, thereby enabling us to tailor our model to meet the specific requirements of each client.',
-            icon: Heart
+            icon: Heart,
+            image: '/asset/Employee Transport Services Image 4.jpeg'
           }
         ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
@@ -108,22 +116,26 @@ export const ServiceDetail = () => {
           {
             title: 'Event-Specific Arrangements',
             description: 'Event-Specific Transportation arrangements guaranteed by Excursion Travel. Once you enlist our assistance for the event, and furnish all the required information about the event, and the number of guests to be expected, you can rid your mind of all worry about the guests arriving at the venue on time. It could be a wedding or a corporate event, our solutions are specific, and tailored to meet the unique demands and necessities of that situation.',
-            icon: Calendar
+            icon: Calendar,
+            image: '/asset/Event Transportation Image 1.jpeg'
           },
           {
             title: 'Extensive Fleet Options',
             description: 'Our Extensive Fleet offers you significant choice for the cars you want that best suits the event. SUVs that can ferry a larger number of people in just the one trip or luxury sedans for some of the more important guests at the event – you will certainly have plenty to choose from.',
-            icon: Car
+            icon: Car,
+            image: '/asset/Event Transportation Image 2.jpeg'
           },
           {
             title: 'Vendor Coordination',
             description: 'Liaising With Other Vendors is also within our scope of operations. We work in tandem with the event planners you have chosen to manage the event so we are aware of every last detail of the itinerary of your guests.',
-            icon: Users
+            icon: Users,
+            image: '/asset/Event Transportation Image 3.jpeg'
           },
           {
             title: 'Professional Service',
             description: 'Professional Drivers will secure your comfort, while being punctual, courteous, and thoroughly professional. Our managers will ensure that you and your guests are assigned the cars of your choice, while our drivers will take care to ensure that, regardless of the chaos on the streets, your journeys are peaceful and comfortable.',
-            icon: Star
+            icon: Star,
+            image: '/asset/Event Transportation Image 4.jpeg'
           }
         ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
@@ -148,22 +160,26 @@ export const ServiceDetail = () => {
           {
             title: 'Expert Coordination',
             description: 'Attentive and Experienced Personnel at Excursion Travel will liaise with conference organizers to understand their requirements, and suitably deploy the required number of cars and coaches for ferrying delegates and participants to and from the event venue. Similarly, delegates attending any big conference from outside the town can reserve either one or multiple cars – depending on the side of their group – so they can focus entirely on the event, and not worry about getting to the venue on time. Our experienced personnel are adept at tailoring solutions to suit your requirements.',
-            icon: Users
+            icon: Users,
+            image: '/asset/Conferences & Delegation Image 1.jpeg'
           },
           {
             title: 'Professional Chauffeurs',
             description: 'Professional Chauffeurs are on stand-by to ferry delegates to the conference, and meetings. Our chauffeurs reflect our ethos rooted in punctuality, professionalism, and sophistication. Cognizant of the value of time where such high-profile events are concerned, our chauffeurs, supported by back-end personnel, meticulously plan and map journeys such that there is maximum convenience and comfort.',
-            icon: Star
+            icon: Star,
+            image: '/asset/Conferences & Delegation Image 2.jpeg'
           },
           {
             title: 'Diverse Fleet Options',
             description: 'A Diverse Fleet of Cars to choose from. Excursion Travel fleet of more than 9,000 cars has in its ranks a number of premium luxury sedans, and SUVs, which can be reserved. Delegates, organisers and VIPs, all of them can rest assured of a comfortable ride on board our well-maintained cars.',
-            icon: Car
+            icon: Car,
+            image: '/asset/Conferences & Delegation Image 3.jpeg'
           },
           {
             title: '24/7 Support',
             description: 'Assistance Guaranteed round-the-clock. Stakeholders can reach out to Excursion Travel personnel at any time of day or night seeking assistance, and rest assured of being lent a patient ear. You may be seeking clarity on billing or you may wish to reschedule your trip or make a fresh reservation besides an existing one, our co-operation is guaranteed.',
-            icon: Clock
+            icon: Clock,
+            image: '/asset/Conferences & Delegation Image 4.jpeg'
           }
         ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
@@ -188,22 +204,26 @@ export const ServiceDetail = () => {
           {
             title: 'Stylish Wedding Cars',
             description: 'Stylish Cars, well maintained and, decked up as suits the occasion, will be at your disposal throughout the duration of the wedding ceremony, including the many events leading up to the big day. You can reserve any number of cars of varying size – sedans, SUVs among others – depending on the preferences of your guest list.',
-            icon: Heart
+            icon: Heart,
+            image: '/asset/Wedding Car Rental Image 1.jpeg'
           },
           {
             title: 'Courteous Chauffeurs',
             description: 'Courteous Chauffeurs will ensure that there is no dampening of the celebratory spirit even on the most congested streets leading up to the venue. Excursion Travel trained chauffeurs, with their knowledge of the streets, coupled with their thoroughly professional approach to their jobs, will take care not only to secure your comfort but ensure that you arrive in time for all the auspicious events well ahead of time.',
-            icon: Star
+            icon: Star,
+            image: '/asset/Wedding Car Rental Image 2.jpeg'
           },
           {
             title: 'Bespoke Packages',
             description: 'Bespoke Packages will fit your needs as well as your tailored suit, for sure. Clients can reserve as many cars as they want, and not necessarily requisition each of them for all the days. Instead, clients can reserve more cars for those days when the number of guests expected is significantly higher while requisitioning fewer cars on other days. This flexibility will ensure that the entire exercise is economical. Our team working tirelessly at the back-end will always be on hand or available on the phone or WhatsApp to accommodate any last-minute changes to the original order.',
-            icon: Calendar
+            icon: Calendar,
+            image: '/asset/Wedding Car Rental Image 3.jpeg'
           },
           {
             title: 'Signature Touches',
             description: 'Signature Touches that we add to the cars rented for the big day, even while you are on the move, leave a touch of festivity to the occasion. From complimentary decorations to the car to any special requests, our experts go above and beyond to make it special.',
-            icon: Sparkles
+            icon: Sparkles,
+            image: '/asset/Wedding Car Rental Image 4.jpeg'
           }
         ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
@@ -224,22 +244,26 @@ export const ServiceDetail = () => {
           {
             title: 'Seamless Airport Transfers',
             description: 'Comprehensive airport transfer services ensuring your guests arrive at the hotel safely and on time. Our professional chauffeurs handle everything from flight tracking to luggage assistance.',
-            icon: Car
+            icon: Car,
+            image: '/asset/Mercedes GLS.png'
           },
           {
             title: '24/7 Availability',
             description: 'Round-the-clock transportation services catering to early morning flights, late-night arrivals, and emergency transportation needs. Our team is always ready to assist.',
-            icon: Clock
+            icon: Clock,
+            image: '/asset/Toyota Fortuner.png'
           },
           {
             title: 'Premium Fleet',
             description: 'Well-maintained, luxury vehicles that enhance your hotel\'s image and provide comfort to your guests. From sedans to SUVs, we have the right vehicle for every occasion.',
-            icon: Star
+            icon: Star,
+            image: '/asset/Audi Q7.png'
           },
           {
             title: 'Guest Experience Enhancement',
             description: 'Elevate your hotel\'s service quality with reliable transportation that creates lasting impressions. Our commitment to excellence ensures guest satisfaction and loyalty.',
-            icon: Heart
+            icon: Heart,
+            image: '/asset/Toyota Vellfire.png'
           }
         ],
         features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling'],
@@ -364,98 +388,249 @@ export const ServiceDetail = () => {
             </motion.div>
           </section>
 
-          <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+          <section className="py-24 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }} />
+            </div>
+
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center mb-20"
               >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  Your Journey With Us
+                <div className="inline-block px-6 py-2 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] text-white rounded-full mb-4">
+                  <span className="font-semibold text-sm flex items-center gap-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    Your Journey
+                  </span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  Seamless Experience From{' '}
+                  <span className="bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] bg-clip-text text-transparent">
+                    Start to Finish
+                  </span>
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                  Experience seamless transportation from start to finish with our comprehensive service approach
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto px-4 sm:px-0 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  Discover our comprehensive 4-step journey that ensures every moment of your transportation experience is exceptional
                 </p>
               </motion.div>
 
-              <div className="max-w-6xl mx-auto">
-                {/* Timeline Steps */}
-                <div className="space-y-12">
+              {/* Progress Bar */}
+              <motion.div
+                initial={{ opacity: 0, scaleX: 0 }}
+                whileInView={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="max-w-4xl mx-auto mb-16"
+              >
+                <div className="relative h-1 bg-gray-200 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    transition={{ duration: 2, delay: 0.5, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                    className="absolute inset-0 bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] rounded-full"
+                  />
+                </div>
+              </motion.div>
+
+              <div className="max-w-7xl mx-auto">
+                {/* Journey Steps Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
                   {[
                     {
                       step: "01",
-                      title: "Booking & Planning",
-                      description: "Easy online booking with personalized service planning tailored to your needs.",
+                      title: "Smart Booking",
+                      subtitle: "Easy Planning",
+                      description: "Seamless online booking with personalized service planning tailored to your specific needs and preferences.",
                       icon: "📱",
-                      color: "from-blue-500 to-blue-600"
+                      color: "from-blue-500 to-blue-600",
+                      bgColor: "from-blue-50 to-blue-100",
+                      features: ["24/7 Online Booking", "Instant Confirmation", "Flexible Scheduling"]
                     },
                     {
                       step: "02",
                       title: "Professional Pickup",
-                      description: "Punctual arrival with professional chauffeurs and well-maintained vehicles.",
+                      subtitle: "Punctual Service",
+                      description: "Experienced chauffeurs arrive on time with meticulously maintained, luxury vehicles ready for your journey.",
                       icon: "🚗",
-                      color: "from-green-500 to-green-600"
+                      color: "from-green-500 to-green-600",
+                      bgColor: "from-green-50 to-green-100",
+                      features: ["Trained Chauffeurs", "Well-Maintained Fleet", "Real-time Tracking"]
                     },
                     {
                       step: "03",
                       title: "Luxury Experience",
-                      description: "Enjoy premium comfort, safety features, and personalized service throughout your journey.",
+                      subtitle: "Premium Comfort",
+                      description: "Indulge in premium comfort, cutting-edge safety features, and personalized service throughout your journey.",
                       icon: "✨",
-                      color: "from-purple-500 to-purple-600"
+                      color: "from-purple-500 to-purple-600",
+                      bgColor: "from-purple-50 to-purple-100",
+                      features: ["Premium Interiors", "Advanced Safety", "Personalized Service"]
                     },
                     {
                       step: "04",
                       title: "Safe Arrival",
-                      description: "Reliable drop-off with real-time tracking and 24/7 support for peace of mind.",
+                      subtitle: "Peace of Mind",
+                      description: "Reliable drop-off with comprehensive tracking, 24/7 support, and guaranteed satisfaction at your destination.",
                       icon: "🏁",
-                      color: "from-orange-500 to-orange-600"
+                      color: "from-orange-500 to-orange-600",
+                      bgColor: "from-orange-50 to-orange-100",
+                      features: ["Safe Drop-off", "24/7 Support", "Quality Assurance"]
                     }
                   ].map((item, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.2 }}
+                      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.6, delay: index * 0.15 }}
                       viewport={{ once: true }}
-                      className={`flex flex-col lg:flex-row items-center gap-6 lg:gap-16 ${
-                        index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                      }`}
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      className="group relative"
                     >
-                      {/* Content Side */}
-                      <div className="flex-1 text-center lg:text-left w-full lg:w-auto">
-                        <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${item.color} text-white text-lg sm:text-2xl mb-4 sm:mb-6 mx-auto lg:mx-0`}>
-                          {item.icon}
+                      {/* Card */}
+                      <div className={`relative bg-gradient-to-br ${item.bgColor} rounded-3xl p-8 h-full border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
+                        {/* Background Pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                          <div className="absolute inset-0" style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
+                          }} />
                         </div>
-                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                          {item.title}
-                        </h3>
-                        <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                          {item.description}
-                        </p>
+
+                        {/* Step Number */}
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.15 + 0.2, type: 'spring' }}
+                          viewport={{ once: true }}
+                          className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-r ${item.color} text-white font-bold text-lg mb-6 shadow-lg`}
+                        >
+                          {item.step}
+                        </motion.div>
+
+                        {/* Icon */}
+                        <motion.div
+                          initial={{ rotate: -180, scale: 0 }}
+                          whileInView={{ rotate: 0, scale: 1 }}
+                          transition={{ duration: 0.6, delay: index * 0.15 + 0.3, type: 'spring' }}
+                          viewport={{ once: true }}
+                          className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${item.color} text-white text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                        >
+                          {item.icon}
+                        </motion.div>
+
+                        {/* Content */}
+                        <div className="space-y-3">
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 font-medium" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                              {item.subtitle}
+                            </p>
+                          </div>
+
+                          <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                            {item.description}
+                          </p>
+
+                          {/* Features List */}
+                          <div className="space-y-2 pt-2">
+                            {item.features.map((feature, idx) => (
+                              <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, x: -10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.4, delay: index * 0.15 + 0.4 + idx * 0.1 }}
+                                viewport={{ once: true }}
+                                className="flex items-center gap-2"
+                              >
+                                <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${item.color}`} />
+                                <span className="text-xs text-gray-600 font-medium" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                                  {feature}
+                                </span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Hover Effect */}
+                        <div className={`absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r group-hover:${item.color} transition-all duration-500`} />
+
+                        {/* Corner Accent */}
+                        <div className={`absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-transparent group-hover:border-l-white group-hover:border-t-white transition-all duration-300`} />
                       </div>
 
-                      {/* Timeline Connector */}
-                      <div className="hidden lg:flex flex-col items-center">
-                        <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r ${item.color} mb-2`} />
-                        <div className="w-1 h-20 sm:h-24 bg-gradient-to-b from-gray-300 to-transparent" />
-                      </div>
-
-                      {/* Step Number */}
-                      <div className={`hidden lg:flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r ${item.color} text-white text-lg sm:text-2xl font-bold shadow-lg`}>
-                        {item.step}
-                      </div>
+                      {/* Connecting Arrow (for larger screens) */}
+                      {index < 3 && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.15 + 0.6 }}
+                          viewport={{ once: true }}
+                          className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10"
+                        >
+                          <div className="w-8 h-8 bg-gradient-to-r from-gray-300 to-gray-400 rounded-full flex items-center justify-center shadow-md">
+                            <motion.div
+                              animate={{ x: [0, 4, 0] }}
+                              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                              className="text-white text-sm"
+                            >
+                              →
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Bottom CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  className="text-center mt-16"
+                >
+                  <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-gray-200">
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                      className="w-10 h-10 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-full flex items-center justify-center"
+                    >
+                      <span className="text-white text-lg">✓</span>
+                    </motion.div>
+                    <div className="text-left">
+                      <h4 className="font-bold text-gray-900" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        Ready for Your Journey?
+                      </h4>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        Experience our premium service from booking to arrival
+                      </p>
+                    </div>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-3 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                      style={{ fontFamily: 'Manrope, sans-serif' }}
+                    >
+                      Start Now
+                    </motion.button>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </section>
 
           {/* Feature Showcase */}
-          <section className="py-24 bg-white">
+          <section className="py-20 bg-white">
             <div className="container mx-auto px-6 lg:px-12">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -465,105 +640,95 @@ export const ServiceDetail = () => {
                 className="text-center mb-16"
               >
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  Why Choose Us
+                  Key Features
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                  Discover the features that make our transportation service the preferred choice for discerning clients
+                  Discover the essential features that make our transportation service the preferred choice for discerning clients
                 </p>
               </motion.div>
 
-              {/* Benefits Grid */}
-              <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+              {/* Alternating Benefits Layout */}
+              <div className="space-y-20">
                 {service.content.benefits?.slice(0, 4).map((benefit, index) => {
-                  const colors = [
-                    'from-blue-500 to-blue-600',
-                    'from-green-500 to-green-600',
-                    'from-purple-500 to-purple-600',
-                    'from-orange-500 to-orange-600'
-                  ];
+                  const isEven = index % 2 === 0;
                   const IconComponent = benefit.icon || Car;
 
                   return (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
+                      className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${
+                        isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                      }`}
                     >
-                      {/* Background Gradient */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                      {/* Image Section */}
+                      <div className="flex-1 w-full lg:w-auto">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                          viewport={{ once: true }}
+                          className="relative group"
+                        >
+                          <div className="relative overflow-hidden rounded-[20px] shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+                            <img
+                              src={benefit.image}
+                              alt={benefit.title}
+                              className="w-full h-80 sm:h-96 lg:h-[400px] object-cover group-hover:scale-110 transition-transform duration-700"
+                              onError={(e) => {
+                                e.target.src = 'https://images.unsplash.com/photo-1555215695-3004980ad54e?crop=entropy&cs=srgb&fm=jpg&q=85';
+                              }}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          </div>
 
-                      {/* Content */}
-                      <div className="relative z-10">
-                        <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${colors[index]} text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="w-6 h-6 sm:w-8 sm:h-8" />
-                        </div>
-
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                          {benefit.title}
-                        </h3>
-
-                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                          {benefit.description}
-                        </p>
+                          {/* Floating Icon */}
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
+                            viewport={{ once: true }}
+                            className="absolute -top-6 -right-6 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] p-4 rounded-2xl shadow-xl"
+                          >
+                            <IconComponent className="w-8 h-8 text-white" />
+                          </motion.div>
+                        </motion.div>
                       </div>
 
-                      {/* Hover Effect Border */}
-                      <div className={`absolute inset-0 rounded-2xl sm:rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r group-hover:${colors[index]} transition-all duration-500`} />
+                      {/* Content Section */}
+                      <div className="flex-1 w-full lg:w-auto text-center lg:text-left">
+                        <motion.div
+                          initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                          viewport={{ once: true }}
+                          className="space-y-6"
+                        >
+                          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#0056D2]/10 to-[#43E0F8]/10 px-6 py-3 rounded-full">
+                            <IconComponent className="w-6 h-6 text-[#0056D2]" />
+                            <span className="text-[#0056D2] font-semibold text-sm uppercase tracking-wider" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                              Feature {index + 1}
+                            </span>
+                          </div>
+
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            {benefit.title}
+                          </h3>
+
+                          <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                            {benefit.description}
+                          </p>
+
+                          {/* Decorative Line */}
+                          <div className="w-24 h-1 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-full mx-auto lg:mx-0" />
+                        </motion.div>
+                      </div>
                     </motion.div>
                   );
                 })}
-              </div>
-            </div>
-          </section>
-
-          <section className="py-24 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
-
-            <div className="container mx-auto px-6 lg:px-12 relative z-10">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  Our Premium Fleet
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto px-4 sm:px-0" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                  Experience luxury and comfort with our meticulously maintained vehicles, designed for your ultimate satisfaction
-                </p>
-              </motion.div>
-
-              {/* Gallery Images */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[service.heroImage, service.content.galleryImage, ...(service.content.galleryImages || [])].slice(0, 6).map((image, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="group relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500"
-                  >
-                    <img
-                      src={image}
-                      alt={`${service.title} fleet ${index + 1}`}
-                      className="w-full h-60 sm:h-72 md:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 transform translate-y-2 sm:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className="text-white text-lg sm:text-xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                        Premium Experience
-                      </h3>
-                      <p className="text-white/90 text-xs sm:text-sm">
-                        Luxury transportation redefined
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </section>
