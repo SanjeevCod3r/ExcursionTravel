@@ -16,8 +16,8 @@ export const FleetShowcase = ({ onBookNow }) => {
       seats: '4 Passengers',
       features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
       image: '/asset/Mercedes E Class.png',
-      color: 'from-gray-600 to-gray-800',
-      bgGradient: 'from-gray-50 to-gray-100',
+      color: 'from-[#0056D2] to-[#43E0F8]',
+      bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Crown
     },
     {
@@ -26,8 +26,8 @@ export const FleetShowcase = ({ onBookNow }) => {
       seats: '7 Passengers',
       features: ['Spacious Interior', 'Family Comfort', 'Reliable Performance'],
       image: '/asset/Toyota Crysta.png',
-      color: 'from-blue-600 to-blue-800',
-      bgGradient: 'from-blue-50 to-blue-100',
+      color: 'from-[#0056D2] to-[#43E0F8]',
+      bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Users
     },
     {
@@ -36,8 +36,8 @@ export const FleetShowcase = ({ onBookNow }) => {
       seats: '4 Passengers',
       features: ['Luxury Feel', 'Advanced Tech', 'Smooth Ride'],
       image: '/asset/Honda City.png',
-      color: 'from-red-600 to-red-800',
-      bgGradient: 'from-red-50 to-red-100',
+      color: 'from-[#0056D2] to-[#43E0F8]',
+      bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Star
     },
     {
@@ -46,8 +46,8 @@ export const FleetShowcase = ({ onBookNow }) => {
       seats: '4 Passengers',
       features: ['Fuel Efficient', 'Air Conditioning', 'Comfortable Ride'],
       image: '/asset/Maruti Suzuki Dzire.png',
-      color: 'from-green-600 to-green-800',
-      bgGradient: 'from-green-50 to-green-100',
+      color: 'from-[#0056D2] to-[#43E0F8]',
+      bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Fuel
     }
   ];

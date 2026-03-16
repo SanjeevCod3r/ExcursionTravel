@@ -6,7 +6,6 @@ import { Services } from "../components/Services";
 import { WhyChoose } from "../components/WhyChoose";
 import { FeaturedPackages } from "../components/FeaturedPackages";
 import { DestinationShowcase } from "../components/DestinationShowcase";
-import { SpecialOffers } from "../components/SpecialOffers";
 import { FleetIntro } from "../components/FleetIntro";
 import { FleetShowcase } from "../components/FleetShowcase";
 import { Footer } from "../components/Footer";
@@ -39,7 +38,6 @@ export const HomePage = () => {
       <WhyChoose />
       <FeaturedPackages />
       <DestinationShowcase />
-      <SpecialOffers />
       <FleetIntro />
       <FleetShowcase onBookNow={handleBookNow} />
       <Footer />
