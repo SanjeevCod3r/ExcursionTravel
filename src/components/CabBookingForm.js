@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, MapPin, Search, User, Mail, Phone, Check, Car, IndianRupee } from 'lucide-react';
 import { pricingData, cities, carTypes } from '../data/pricingData';
@@ -14,6 +14,13 @@ export const CabBookingForm = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [calculatedPrice, setCalculatedPrice] = useState(0);
   const [bookingStep, setBookingStep] = useState('basic'); // 'basic', 'details', 'pricing', 'userDetails', 'confirmation'
+  
+  // Auto-set trip type to oneway when airport is selected
+  useEffect(() => {
+    if (activeTab === 'airport') {
+      setTripType('oneway');
+    }
+  }, [activeTab]);
   
   const [formData, setFormData] = useState({
     pickupLocation: '',
@@ -293,59 +300,68 @@ export const CabBookingForm = () => {
               </select>
             </div>
 
-            {/* Trip Type Radio Buttons */}
-            <div className="flex gap-4 mb-4 bg-white/5 rounded-xl p-3 backdrop-blur-sm">
-              <label className="flex items-center cursor-pointer flex-1 relative group">
-                <div className="relative">
-                  <input
-                    type="radio"
-                    name="tripType"
-                    value="oneway"
-                    checked={tripType === 'oneway'}
-                    onChange={(e) => {
-                      console.log('One Way selected');
-                      setTripType(e.target.value);
-                    }}
-                    className="sr-only"
-                  />
-                  <div className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                    tripType === 'oneway' 
-                      ? 'bg-blue-500 border-blue-500' 
-                      : 'bg-white/10 border-white/30 group-hover:border-white/50'
-                  }`}>
-                    {tripType === 'oneway' && (
-                      <div className="w-2 h-2 bg-white rounded-full m-1"></div>
-                    )}
-                  </div>
+            {/* Trip Type Radio Buttons - Hidden for Airport */}
+            {activeTab !== 'airport' && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex gap-4 mb-4 bg-white/5 rounded-xl p-3 backdrop-blur-sm">
+                  <label className="flex items-center cursor-pointer flex-1 relative group">
+                    <div className="relative">
+                      <input
+                        type="radio"
+                        name="tripType"
+                        value="oneway"
+                        checked={tripType === 'oneway'}
+                        onChange={(e) => {
+                          console.log('One Way selected');
+                          setTripType(e.target.value);
+                        }}
+                        className="sr-only"
+                      />
+                      <div className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
+                        tripType === 'oneway' 
+                          ? 'bg-blue-500 border-blue-500' 
+                          : 'bg-white/10 border-white/30 group-hover:border-white/50'
+                      }`}>
+                        {tripType === 'oneway' && (
+                          <div className="w-2 h-2 bg-white rounded-full m-1"></div>
+                        )}
+                      </div>
+                    </div>
+                    <span className="ml-3 text-white font-medium text-sm select-none">One Way</span>
+                  </label>
+                  <label className="flex items-center cursor-pointer flex-1 relative group">
+                    <div className="relative">
+                      <input
+                        type="radio"
+                        name="tripType"
+                        value="round"
+                        checked={tripType === 'round'}
+                        onChange={(e) => {
+                          console.log('Round Trip selected');
+                          setTripType(e.target.value);
+                        }}
+                        className="sr-only"
+                      />
+                      <div className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
+                        tripType === 'round' 
+                          ? 'bg-blue-500 border-blue-500' 
+                          : 'bg-white/10 border-white/30 group-hover:border-white/50'
+                      }`}>
+                        {tripType === 'round' && (
+                          <div className="w-2 h-2 bg-white rounded-full m-1"></div>
+                        )}
+                      </div>
+                    </div>
+                    <span className="ml-3 text-white font-medium text-sm select-none">Round Trip</span>
+                  </label>
                 </div>
-                <span className="ml-3 text-white font-medium text-sm select-none">One Way</span>
-              </label>
-              <label className="flex items-center cursor-pointer flex-1 relative group">
-                <div className="relative">
-                  <input
-                    type="radio"
-                    name="tripType"
-                    value="round"
-                    checked={tripType === 'round'}
-                    onChange={(e) => {
-                      console.log('Round Trip selected');
-                      setTripType(e.target.value);
-                    }}
-                    className="sr-only"
-                  />
-                  <div className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
-                    tripType === 'round' 
-                      ? 'bg-blue-500 border-blue-500' 
-                      : 'bg-white/10 border-white/30 group-hover:border-white/50'
-                  }`}>
-                    {tripType === 'round' && (
-                      <div className="w-2 h-2 bg-white rounded-full m-1"></div>
-                    )}
-                  </div>
-                </div>
-                <span className="ml-3 text-white font-medium text-sm select-none">Round Trip</span>
-              </label>
-            </div>
+              </motion.div>
+            )}
 
             {/* Basic Location Fields */}
             <form onSubmit={handleBasicNext} className="space-y-3">
@@ -565,7 +581,9 @@ export const CabBookingForm = () => {
                 </div>
                 <div className="flex justify-between text-blue-100">
                   <span>Trip Type:</span>
-                  <span className="text-white font-medium">{tripType === 'oneway' ? 'One Way' : 'Round Trip'}</span>
+                  <span className="text-white font-medium">
+                    {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
+                  </span>
                 </div>
               </div>
             </div>
@@ -714,7 +732,9 @@ export const CabBookingForm = () => {
                 </div>
                 <div className="flex justify-between text-blue-100">
                   <span>Trip Type:</span>
-                  <span className="text-white font-medium">{tripType === 'oneway' ? 'One Way' : 'Round Trip'}</span>
+                  <span className="text-white font-medium">
+                    {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
+                  </span>
                 </div>
                 <div className="flex justify-between text-blue-100">
                   <span>Pickup:</span>
