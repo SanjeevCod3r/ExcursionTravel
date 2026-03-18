@@ -11,44 +11,44 @@ export const FleetShowcase = ({ onBookNow }) => {
   };
   const featuredVehicles = [
     {
-      name: 'Mercedes E Class',
-      category: 'Luxury Sedan',
+      name: 'Toyota Vellfire',
+      category: 'Premium Sedan',
       seats: '4 Passengers',
       features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
-      image: '/asset/Mercedes E Class.png',
+      image: '/asset/Toyota Vellfire.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Crown
     },
     {
-      name: 'Toyota Innova Crysta',
-      category: 'Premium MUV',
+      name: 'Mercedes GLS',
+      category: 'Luxury SUV',
       seats: '7 Passengers',
       features: ['Spacious Interior', 'Family Comfort', 'Reliable Performance'],
-      image: '/asset/Toyota Crysta.png',
+      image: '/asset/Mercedes GLS.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Users
     },
     {
-      name: 'Honda City',
-      category: 'Premium Sedan',
-      seats: '4 Passengers',
-      features: ['Luxury Feel', 'Advanced Tech', 'Smooth Ride'],
-      image: '/asset/Honda City.png',
+      name: 'Toyota Innova Hycross',
+      category: 'Premium MUV',
+      seats: '7 Passengers',
+      features: ['Spacious Interior', 'Family Comfort', 'Reliable Performance'],
+      image: '/asset/Toyota Innova Hycross.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
-      icon: Star
+      icon: Users
     },
     {
-      name: 'Maruti Suzuki Dzire',
-      category: 'Economy Sedan',
+      name: 'Mercedes S Class',
+      category: 'Luxury Sedan',
       seats: '4 Passengers',
-      features: ['Fuel Efficient', 'Air Conditioning', 'Comfortable Ride'],
-      image: '/asset/Maruti Suzuki Dzire.png',
+      features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
+      image: '/asset/Mercedes S Class.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
-      icon: Fuel
+      icon: Crown
     }
   ];
 
