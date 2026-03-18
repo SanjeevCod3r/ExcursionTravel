@@ -18,7 +18,10 @@ export const CabBookingForm = () => {
     pickupLocation: '',
     destination: '',
     pickupDate: '',
-    pickupTime: ''
+    pickupTime: '',
+    returnDestination: '',
+    returnDate: '',
+    returnTime: ''
   });
 
   const [userDetails, setUserDetails] = useState({
@@ -60,6 +63,11 @@ export const CabBookingForm = () => {
       basePrice = Math.max(basePrice, carPricing.outstationMinKms * carPricing.outstationRate);
     }
     
+    // For round trips, double the base price
+    if (tripType === 'round') {
+      basePrice = basePrice * 2;
+    }
+    
     return basePrice;
   };
 
@@ -68,6 +76,14 @@ export const CabBookingForm = () => {
     if (!selectedCity || !selectedCar) {
       alert('Please select city and car type');
       return;
+    }
+    
+    // Validate round trip fields
+    if (tripType === 'round') {
+      if (!formData.returnDate || !formData.returnTime) {
+        alert('Please provide return date and time for round trip');
+        return;
+      }
     }
     
     const price = calculatePrice();
@@ -109,7 +125,10 @@ export const CabBookingForm = () => {
       pickupLocation: '',
       destination: '',
       pickupDate: '',
-      pickupTime: ''
+      pickupTime: '',
+      returnDestination: '',
+      returnDate: '',
+      returnTime: ''
     });
     setUserDetails({
       name: '',
@@ -324,6 +343,77 @@ export const CabBookingForm = () => {
                 </div>
               </div>
 
+              {/* Return Date and Time for Round Trip */}
+              {tripType === 'round' && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="space-y-3"
+                >
+                  <h4 className="text-white text-sm font-medium mb-2">Return Details</h4>
+                  
+                  {/* Return Destination */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <MapPin className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                    </div>
+                    <input
+                      type="text"
+                      name="returnDestination"
+                      value={formData.returnDestination || ''}
+                      onChange={handleInputChange}
+                      placeholder="Return Destination (usually same as pickup)"
+                      className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white placeholder-blue-200 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                      }}
+                    />
+                  </div>
+
+                  {/* Return Date and Time Row */}
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    {/* Return Date */}
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <Calendar className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                      </div>
+                      <input
+                        type="date"
+                        name="returnDate"
+                        value={formData.returnDate}
+                        onChange={handleInputChange}
+                        min={formData.pickupDate}
+                        className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                        }}
+                        required={tripType === 'round'}
+                      />
+                    </div>
+
+                    {/* Return Time */}
+                    <div className="relative group">
+                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <Clock className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                      </div>
+                      <input
+                        type="time"
+                        name="returnTime"
+                        value={formData.returnTime}
+                        onChange={handleInputChange}
+                        className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                        }}
+                        required={tripType === 'round'}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Search Button */}
               <motion.button
                 type="submit"
@@ -523,6 +613,10 @@ export const CabBookingForm = () => {
                   <span className="text-white font-medium">{userDetails.phone}</span>
                 </div>
                 <div className="flex justify-between text-blue-100">
+                  <span>Trip Type:</span>
+                  <span className="text-white font-medium">{tripType === 'oneway' ? 'One Way' : 'Round Trip'}</span>
+                </div>
+                <div className="flex justify-between text-blue-100">
                   <span>Pickup:</span>
                   <span className="text-white font-medium">{formData.pickupLocation}</span>
                 </div>
@@ -531,9 +625,21 @@ export const CabBookingForm = () => {
                   <span className="text-white font-medium">{formData.destination}</span>
                 </div>
                 <div className="flex justify-between text-blue-100">
-                  <span>Date & Time:</span>
+                  <span>Pickup Date & Time:</span>
                   <span className="text-white font-medium">{formData.pickupDate} {formData.pickupTime}</span>
                 </div>
+                {tripType === 'round' && formData.returnDate && (
+                  <>
+                    <div className="flex justify-between text-blue-100">
+                      <span>Return Destination:</span>
+                      <span className="text-white font-medium">{formData.returnDestination || 'Same as pickup'}</span>
+                    </div>
+                    <div className="flex justify-between text-blue-100">
+                      <span>Return Date & Time:</span>
+                      <span className="text-white font-medium">{formData.returnDate} {formData.returnTime}</span>
+                    </div>
+                  </>
+                )}
                 <div className="flex justify-between text-blue-100 pt-3 border-t border-white/20">
                   <span>Total Price:</span>
                   <span className="text-white font-bold text-lg">₹{calculatedPrice}</span>
