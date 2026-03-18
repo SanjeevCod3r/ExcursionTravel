@@ -24,6 +24,43 @@
         <title>Excursion Travel - Premium Transportation Services</title>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
         <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+        <!-- Google Maps API for Places Autocomplete (Optional) -->
+        <script>
+          (function() {
+            // Check if API key is provided, otherwise skip Google Maps
+            const apiKey = 'YOUR_API_KEY';
+            
+            if (apiKey && apiKey !== 'YOUR_API_KEY') {
+              // Load Google Maps API only if valid API key is provided
+              const googleMapsScript = document.createElement('script');
+              googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&libraries=places&callback=initGoogleMaps';
+              googleMapsScript.async = true;
+              googleMapsScript.defer = true;
+              
+              // Initialize callback function
+              window.initGoogleMaps = function() {
+                console.log('Google Maps API loaded successfully');
+              };
+              
+              // Handle loading errors
+              googleMapsScript.onerror = function() {
+                console.warn('Google Maps API failed to load. Using fallback locations.');
+              };
+              
+              // Set timeout to prevent hanging
+              setTimeout(() => {
+                if (!window.google || !window.google.maps) {
+                  console.warn('Google Maps API loading timeout. Using fallback locations.');
+                }
+              }, 5000);
+              
+              document.head.appendChild(googleMapsScript);
+            } else {
+              // No API key provided, use fallback immediately
+              console.log('No Google Maps API key provided. Using fallback locations.');
+            }
+          })();
+        </script>
         <!--
         These two scripts have been added for the Visual Edits, please do not edit or remove them
         -->
