@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, MapPin, Search, User, Mail, Phone, Check, Car, IndianRupee } from 'lucide-react';
 import { pricingData, cities, carTypes } from '../data/pricingData';
-import { GooglePlacesAutocomplete } from './GooglePlacesAutocomplete';
+import { EnhancedLocationInput } from './EnhancedLocationInput';
 
 export const CabBookingForm = () => {
   const [activeTab, setActiveTab] = useState('outstation');
   const [tripType, setTripType] = useState('oneway');
-  const [selectedCity, setSelectedCity] = useState('');
   const [selectedCar, setSelectedCar] = useState('');
+  const [airportDirection, setAirportDirection] = useState(''); // 'from' or 'to' for airport tab
   const [showPricing, setShowPricing] = useState(false);
   const [showUserForm, setShowUserForm] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -52,11 +52,26 @@ export const CabBookingForm = () => {
   };
 
   const calculatePrice = () => {
-    if (!selectedCity || !selectedCar) return 0;
+    if (!selectedCar) return 0;
     
-    const cityPricing = pricingData[selectedCity];
+    // Use default city pricing (Delhi (NCR)) or create a simple pricing structure
+    const defaultCity = 'Delhi (NCR)';
+    const cityPricing = pricingData[defaultCity];
+    
+    if (!cityPricing || !cityPricing[selectedCar]) {
+      // Fallback pricing if car type not found
+      const fallbackPrices = {
+        'Sedan': 1500,
+        'SUV': 2000,
+        'Premium Sedan': 2500,
+        'Premium SUV': 3000,
+        'Luxury': 4000,
+        'Tempo Traveller': 3500
+      };
+      return fallbackPrices[selectedCar] || 1500;
+    }
+    
     const carPricing = cityPricing[selectedCar];
-    
     let basePrice = carPricing.baseCharge;
     
     // For outstation trips, use minimum charge
@@ -74,8 +89,8 @@ export const CabBookingForm = () => {
 
   const handleSearchCabs = (e) => {
     e.preventDefault();
-    if (!selectedCity || !selectedCar) {
-      alert('Please select city and car type');
+    if (!selectedCar) {
+      alert('Please select car type');
       return;
     }
     
@@ -95,10 +110,17 @@ export const CabBookingForm = () => {
 
   const handleBasicNext = (e) => {
     e.preventDefault();
-    if (!selectedCity || !selectedCar || !formData.pickupLocation || !formData.destination) {
+    if (!selectedCar || !formData.pickupLocation || !formData.destination) {
       alert('Please fill all basic details');
       return;
     }
+    
+    // Require airport direction when airport is selected
+    if (activeTab === 'airport' && !airportDirection) {
+      alert('Please select From Airport or To Airport');
+      return;
+    }
+    
     setBookingStep('details');
   };
 
@@ -123,7 +145,7 @@ export const CabBookingForm = () => {
   const handleConfirmBooking = () => {
     // Here you would normally send the data to your backend
     console.log('Booking confirmed:', {
-      tripDetails: { ...formData, activeTab, tripType, selectedCity, selectedCar },
+      tripDetails: { ...formData, activeTab, tripType, selectedCar, airportDirection },
       userDetails,
       price: calculatedPrice
     });
@@ -145,8 +167,8 @@ export const CabBookingForm = () => {
       email: '',
       phone: ''
     });
-    setSelectedCity('');
     setSelectedCar('');
+    setAirportDirection('');
     setBookingStep('basic');
     setShowConfirmation(false);
   };
@@ -195,24 +217,62 @@ export const CabBookingForm = () => {
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.3 }}
           >
-            {/* City Selection */}
-            <div className="mb-4">
-              <label className="block text-white text-sm font-medium mb-2">Select City</label>
-              <select
-                value={selectedCity}
-                onChange={(e) => setSelectedCity(e.target.value)}
-                className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
-                }}
-                required
-              >
-                <option value="" className="text-gray-800">Choose your city</option>
-                {cities.map((city) => (
-                  <option key={city} value={city} className="text-gray-800">{city}</option>
-                ))}
-              </select>
+            {/* Service Type Tabs */}
+            <div className="flex mb-4 bg-white/5 rounded-xl p-1 backdrop-blur-sm">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    // Reset airport direction when switching away from airport
+                    if (tab.id !== 'airport') {
+                      setAirportDirection('');
+                    }
+                  }}
+                  className={`flex-1 py-2.5 px-2 sm:px-3 text-xs sm:text-sm font-medium rounded-lg transition-all duration-300 ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
+                      : 'text-blue-100 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
+
+            {/* Airport Direction Options */}
+            {activeTab === 'airport' && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mb-4"
+              >
+                <div className="flex gap-3 bg-white/5 rounded-xl p-2 backdrop-blur-sm">
+                  <button
+                    onClick={() => setAirportDirection('from')}
+                    className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      airportDirection === 'from'
+                        ? 'bg-blue-500 text-white shadow-md'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    From Airport
+                  </button>
+                  <button
+                    onClick={() => setAirportDirection('to')}
+                    className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      airportDirection === 'to'
+                        ? 'bg-blue-500 text-white shadow-md'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    To Airport
+                  </button>
+                </div>
+              </motion.div>
+            )}
 
             {/* Car Type Selection */}
             <div className="mb-4">
@@ -235,34 +295,62 @@ export const CabBookingForm = () => {
 
             {/* Trip Type Radio Buttons */}
             <div className="flex gap-4 mb-4 bg-white/5 rounded-xl p-3 backdrop-blur-sm">
-              <label className="flex items-center cursor-pointer flex-1">
-                <input
-                  type="radio"
-                  name="tripType"
-                  value="oneway"
-                  checked={tripType === 'oneway'}
-                  onChange={(e) => setTripType(e.target.value)}
-                  className="mr-2 w-4 h-4 text-blue-600 focus:ring-blue-500 focus:ring-2"
-                />
-                <span className="text-white font-medium text-sm">One Way</span>
+              <label className="flex items-center cursor-pointer flex-1 relative group">
+                <div className="relative">
+                  <input
+                    type="radio"
+                    name="tripType"
+                    value="oneway"
+                    checked={tripType === 'oneway'}
+                    onChange={(e) => {
+                      console.log('One Way selected');
+                      setTripType(e.target.value);
+                    }}
+                    className="sr-only"
+                  />
+                  <div className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
+                    tripType === 'oneway' 
+                      ? 'bg-blue-500 border-blue-500' 
+                      : 'bg-white/10 border-white/30 group-hover:border-white/50'
+                  }`}>
+                    {tripType === 'oneway' && (
+                      <div className="w-2 h-2 bg-white rounded-full m-1"></div>
+                    )}
+                  </div>
+                </div>
+                <span className="ml-3 text-white font-medium text-sm select-none">One Way</span>
               </label>
-              <label className="flex items-center cursor-pointer flex-1">
-                <input
-                  type="radio"
-                  name="tripType"
-                  value="round"
-                  checked={tripType === 'round'}
-                  onChange={(e) => setTripType(e.target.value)}
-                  className="mr-2 w-4 h-4 text-blue-600 focus:ring-blue-500 focus:ring-2"
-                />
-                <span className="text-white font-medium text-sm">Round Trip</span>
+              <label className="flex items-center cursor-pointer flex-1 relative group">
+                <div className="relative">
+                  <input
+                    type="radio"
+                    name="tripType"
+                    value="round"
+                    checked={tripType === 'round'}
+                    onChange={(e) => {
+                      console.log('Round Trip selected');
+                      setTripType(e.target.value);
+                    }}
+                    className="sr-only"
+                  />
+                  <div className={`w-5 h-5 rounded-full border-2 transition-all duration-200 ${
+                    tripType === 'round' 
+                      ? 'bg-blue-500 border-blue-500' 
+                      : 'bg-white/10 border-white/30 group-hover:border-white/50'
+                  }`}>
+                    {tripType === 'round' && (
+                      <div className="w-2 h-2 bg-white rounded-full m-1"></div>
+                    )}
+                  </div>
+                </div>
+                <span className="ml-3 text-white font-medium text-sm select-none">Round Trip</span>
               </label>
             </div>
 
             {/* Basic Location Fields */}
             <form onSubmit={handleBasicNext} className="space-y-3">
               {/* Pickup Location */}
-              <GooglePlacesAutocomplete
+              <EnhancedLocationInput
                 name="pickupLocation"
                 value={formData.pickupLocation}
                 onChange={handleInputChange}
@@ -271,7 +359,7 @@ export const CabBookingForm = () => {
               />
 
               {/* Destination */}
-              <GooglePlacesAutocomplete
+              <EnhancedLocationInput
                 name="destination"
                 value={formData.destination}
                 onChange={handleInputChange}
@@ -367,7 +455,7 @@ export const CabBookingForm = () => {
                   <h4 className="text-white text-sm font-medium">Return Details</h4>
                   
                   {/* Return Destination */}
-                  <GooglePlacesAutocomplete
+                  <EnhancedLocationInput
                     name="returnDestination"
                     value={formData.returnDestination || ''}
                     onChange={handleInputChange}
@@ -460,9 +548,17 @@ export const CabBookingForm = () => {
               
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between text-blue-100">
-                  <span>City:</span>
-                  <span className="text-white font-medium">{selectedCity}</span>
+                  <span>Service Type:</span>
+                  <span className="text-white font-medium capitalize">{activeTab}</span>
                 </div>
+                {activeTab === 'airport' && airportDirection && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Airport Direction:</span>
+                    <span className="text-white font-medium capitalize">
+                      {airportDirection === 'from' ? 'From Airport' : 'To Airport'}
+                    </span>
+                  </div>
+                )}
                 <div className="flex justify-between text-blue-100">
                   <span>Car Type:</span>
                   <span className="text-white font-medium">{selectedCar}</span>
@@ -470,10 +566,6 @@ export const CabBookingForm = () => {
                 <div className="flex justify-between text-blue-100">
                   <span>Trip Type:</span>
                   <span className="text-white font-medium">{tripType === 'oneway' ? 'One Way' : 'Round Trip'}</span>
-                </div>
-                <div className="flex justify-between text-blue-100">
-                  <span>Service Type:</span>
-                  <span className="text-white font-medium capitalize">{activeTab}</span>
                 </div>
               </div>
             </div>
