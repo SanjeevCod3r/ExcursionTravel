@@ -37,13 +37,13 @@ export const Footer = () => {
             viewport={{ once: true }}
             data-testid="footer-company-info"
           >
-            <h3
-              className="text-2xl font-bold mb-4"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-              data-testid="footer-company-name"
-            >
-              Excursion Travel
-            </h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/asset/logo website.png" 
+                alt="Excursion Travel" 
+                className="h-12 w-auto"
+              />
+            </div>
             <p
               className="text-gray-400 mb-6 leading-relaxed"
               style={{ fontFamily: 'Manrope, sans-serif' }}
@@ -161,20 +161,20 @@ export const Footer = () => {
                 <Mail size={18} className="text-[#43E0F8] mt-1 flex-shrink-0" />
                 <div>
                   <a
-                    href="mailto:Contact@excursiontravel.in"
+                    href="mailto:contact@excursiontravel.in"
                     className="text-gray-400 hover:text-[#43E0F8] transition-colors block"
                     style={{ fontFamily: 'Manrope, sans-serif' }}
                     data-testid="footer-email-contact"
                   >
-                    Contact@excursiontravel.in
+                    contact@excursiontravel.in
                   </a>
                   <a
-                    href="mailto:booking.excursiontravel@gmail.com"
+                    href="mailto:bipin@excursiontravel.in"
                     className="text-gray-400 hover:text-[#43E0F8] transition-colors block mt-1 text-sm"
                     style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="footer-email-booking"
+                    data-testid="footer-email-bipin"
                   >
-                    booking.excursiontravel@gmail.com
+                    bipin@excursiontravel.in
                   </a>
                 </div>
               </li>

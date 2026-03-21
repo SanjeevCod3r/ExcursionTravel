@@ -40,23 +40,37 @@ export const Navbar = () => {
       >
         <div className={`max-w-7xl mx-auto transition-all duration-500 ${
           isScrolled
-            ? 'bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#0056D2] backdrop-blur-xl shadow-2xl rounded-3xl'
-            : 'bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#0056D2] backdrop-blur-lg rounded-3xl'
-          } border border-[#43E0F8]/30`}>
-          <div className="px-6 py-4 md:px-8 md:py-5">
+            ? 'bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl'
+            : 'bg-white/90 backdrop-blur-lg rounded-3xl'
+          } border border-gray-200/50 relative overflow-hidden`}>
+          {/* Glossy Overlay Effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-white/10 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent pointer-events-none"></div>
+          
+          {/* Animated Shine Effect */}
+          <motion.div
+            animate={{ x: ['-100%', '100%'] }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none"
+            style={{ width: '200%' }}
+          />
+          
+          <div className="relative z-10 px-6 py-4 md:px-8 md:py-5">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
-                className="flex items-center space-x-2"
+                className="flex items-center"
                 data-testid="logo-container"
               >
-                <a href="#home" className="flex items-center">
-                  <div className="text-xl md:text-2xl font-bold tracking-tight text-white transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    Excursion Travel
-                  </div>
-                </a>
+                <Link to="/" className="flex items-center">
+                  <img 
+                    src="/asset/logo website.png" 
+                    alt="Excursion Travel" 
+                    className="h-8 w-auto md:h-10 transition-all duration-300"
+                  />
+                </Link>
               </motion.div>
 
               {/* Desktop Navigation */}
@@ -70,7 +84,7 @@ export const Navbar = () => {
                   >
                     <Link
                       to={link.href}
-                      className="text-sm font-medium transition-colors duration-300 hover:text-[#43E0F8] relative group whitespace-nowrap text-white"
+                      className="text-sm font-medium transition-colors duration-300 hover:text-[#0056D2] relative group whitespace-nowrap text-gray-700"
                       style={{ fontFamily: 'Manrope, sans-serif' }}
                       data-testid={`nav-link-${link.name.toLowerCase()}`}
                     >
@@ -100,7 +114,7 @@ export const Navbar = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2.5 rounded-xl transition-all duration-300 text-white bg-white/10 hover:bg-white/20"
+                className="lg:hidden p-2.5 rounded-xl transition-all duration-300 text-gray-700 bg-gray-100 hover:bg-gray-200"
                 data-testid="mobile-menu-toggle"
               >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -133,10 +147,6 @@ export const Navbar = () => {
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               className="lg:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 overflow-hidden"
               data-testid="mobile-menu-drawer"
-              style={{
-                background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-                boxShadow: '-10px 0 40px rgba(0, 86, 210, 0.3)'
-              }}
             >
               {/* Road Pattern Background */}
               <div className="absolute inset-0 opacity-10">
@@ -239,12 +249,8 @@ export const Navbar = () => {
                       transition={{ delay: index * 0.08 }}
                       whileHover={{ scale: 1.02, x: 5 }}
                       whileTap={{ scale: 0.98 }}
-                      className="group relative flex items-center justify-between p-5 rounded-2xl transition-all duration-300 border border-white/10 hover:border-[#43E0F8]/50 overflow-hidden"
+                      className="group relative flex items-center justify-between p-5 rounded-2xl transition-all duration-300 border border-gray-200 hover:border-[#0056D2]/50 overflow-hidden bg-gray-50 hover:bg-gray-100"
                       data-testid={`mobile-nav-link-${link.name.toLowerCase()}`}
-                      style={{
-                        background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)',
-                        backdropFilter: 'blur(10px)'
-                      }}
                     >
                       {/* Headlight beam effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#43E0F8]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -254,11 +260,11 @@ export const Navbar = () => {
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ delay: 0.1 + index * 0.08 }}
-                          className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0056D2]/20 to-[#43E0F8]/20 flex items-center justify-center text-[#43E0F8] border border-[#43E0F8]/30"
+                          className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0056D2] to-[#43E0F8] flex items-center justify-center text-white border border-[#0056D2]/30 shadow-lg"
                         >
                           {getIcon(link.name)}
                         </motion.div>
-                        <span className="text-white font-semibold text-lg group-hover:text-[#43E0F8] transition-all duration-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <span className="text-gray-700 font-semibold text-lg group-hover:text-[#0056D2] transition-all duration-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
                           {link.name}
                         </span>
                       </div>
