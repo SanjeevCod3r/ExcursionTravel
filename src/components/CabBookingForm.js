@@ -15,9 +15,9 @@ export const CabBookingForm = () => {
   const [calculatedPrice, setCalculatedPrice] = useState(0);
   const [bookingStep, setBookingStep] = useState('basic'); // 'basic', 'details', 'pricing', 'userDetails', 'confirmation'
   
-  // Auto-set trip type to oneway when airport is selected
+  // Auto-set trip type to oneway when airport or local is selected
   useEffect(() => {
-    if (activeTab === 'airport') {
+    if (activeTab === 'airport' || activeTab === 'local') {
       setTripType('oneway');
     }
   }, [activeTab]);
@@ -101,14 +101,7 @@ export const CabBookingForm = () => {
       return;
     }
     
-    // Validate round trip fields
-    if (tripType === 'round') {
-      if (!formData.returnDate || !formData.returnTime) {
-        alert('Please provide return date and time for round trip');
-        return;
-      }
-    }
-    
+    // Calculate price and go to pricing
     const price = calculatePrice();
     setCalculatedPrice(price);
     setBookingStep('pricing');
@@ -117,8 +110,8 @@ export const CabBookingForm = () => {
 
   const handleBasicNext = (e) => {
     e.preventDefault();
-    if (!selectedCar || !formData.pickupLocation || !formData.destination) {
-      alert('Please fill all basic details');
+    if (!formData.pickupLocation || !formData.destination) {
+      alert('Please fill all location details');
       return;
     }
     
@@ -128,6 +121,19 @@ export const CabBookingForm = () => {
       return;
     }
     
+    // Require date and time
+    if (!formData.pickupDate || !formData.pickupTime) {
+      alert('Please select pickup date and time');
+      return;
+    }
+    
+    // Validate round trip fields
+    if (tripType === 'round' && (!formData.returnDate || !formData.returnTime)) {
+      alert('Please provide return date and time for round trip');
+      return;
+    }
+    
+    // Go to details step for car selection
     setBookingStep('details');
   };
 
@@ -200,14 +206,14 @@ export const CabBookingForm = () => {
       >
         <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
           {bookingStep === 'basic' && 'Book Your Ride'}
-          {bookingStep === 'details' && 'Trip Details'}
+          {bookingStep === 'details' && 'Select Car Type'}
           {bookingStep === 'pricing' && 'Pricing Details'}
           {bookingStep === 'userDetails' && 'Your Details'}
           {bookingStep === 'confirmation' && 'Confirm Booking'}
         </h3>
         <p className="text-blue-100 text-sm" style={{ fontFamily: 'Manrope, sans-serif' }}>
-          {bookingStep === 'basic' && 'Where would you like to go?'}
-          {bookingStep === 'details' && 'When do you want to travel?'}
+          {bookingStep === 'basic' && 'Where and when would you like to go?'}
+          {bookingStep === 'details' && 'Choose your preferred vehicle'}
           {bookingStep === 'pricing' && 'Best prices guaranteed'}
           {bookingStep === 'userDetails' && 'Please provide your details'}
           {bookingStep === 'confirmation' && 'Review your booking'}
@@ -281,34 +287,16 @@ export const CabBookingForm = () => {
               </motion.div>
             )}
 
-            {/* Car Type Selection */}
-            <div className="mb-4">
-              <label className="block text-white text-sm font-medium mb-2">Select Car Type</label>
-              <select
-                value={selectedCar}
-                onChange={(e) => setSelectedCar(e.target.value)}
-                className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
-                }}
-                required
-              >
-                <option value="" className="text-gray-800">Choose car type</option>
-                {carTypes.map((car) => (
-                  <option key={car} value={car} className="text-gray-800">{car}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Trip Type Radio Buttons - Hidden for Airport */}
-            {activeTab !== 'airport' && (
+            {/* Trip Type Radio Buttons - Only for OutStation */}
+            {activeTab === 'outstation' && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
+                className="mb-4"
               >
-                <div className="flex gap-4 mb-4 bg-white/5 rounded-xl p-3 backdrop-blur-sm">
+                <div className="flex gap-4 bg-white/5 rounded-xl p-3 backdrop-blur-sm">
                   <label className="flex items-center cursor-pointer flex-1 relative group">
                     <div className="relative">
                       <input
@@ -383,6 +371,99 @@ export const CabBookingForm = () => {
                 required
               />
 
+              {/* Date and Time Selection */}
+              <div className="mb-4">
+                <label className="block text-white text-sm font-medium mb-2">When do you want to travel?</label>
+                <div className="grid grid-cols-2 gap-3">
+                  {/* Pickup Date */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <Calendar className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                    </div>
+                    <input
+                      type="date"
+                      name="pickupDate"
+                      value={formData.pickupDate}
+                      onChange={handleInputChange}
+                      className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                      }}
+                      required
+                    />
+                  </div>
+
+                  {/* Pickup Time */}
+                  <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                      <Clock className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                    </div>
+                    <input
+                      type="time"
+                      name="pickupTime"
+                      value={formData.pickupTime}
+                      onChange={handleInputChange}
+                      className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                      }}
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Return Date and Time for Round Trip */}
+                {tripType === 'round' && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-3"
+                  >
+                    <h4 className="text-white text-sm font-medium mb-2">Return Details</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {/* Return Date */}
+                      <div className="relative group">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                          <Calendar className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                        </div>
+                        <input
+                          type="date"
+                          name="returnDate"
+                          value={formData.returnDate}
+                          onChange={handleInputChange}
+                          min={formData.pickupDate}
+                          className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
+                          style={{
+                            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                          }}
+                          required={tripType === 'round'}
+                        />
+                      </div>
+
+                      {/* Return Time */}
+                      <div className="relative group">
+                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                          <Clock className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
+                        </div>
+                        <input
+                          type="time"
+                          name="returnTime"
+                          value={formData.returnTime}
+                          onChange={handleInputChange}
+                          className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
+                          style={{
+                            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                          }}
+                          required={tripType === 'round'}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
               {/* Next Button */}
               <motion.button
                 type="submit"
@@ -400,7 +481,7 @@ export const CabBookingForm = () => {
           </motion.div>
         )}
 
-        {/* Step 2: Trip Details */}
+        {/* Step 2: Car Selection */}
         {bookingStep === 'details' && (
           <motion.div
             key="details"
@@ -414,111 +495,33 @@ export const CabBookingForm = () => {
               <div className="text-xs text-blue-200 space-y-1">
                 <div><span className="text-white">From:</span> {formData.pickupLocation}</div>
                 <div><span className="text-white">To:</span> {formData.destination}</div>
-                <div><span className="text-white">Car:</span> {selectedCar}</div>
+                <div><span className="text-white">Date:</span> {formData.pickupDate} {formData.pickupTime}</div>
+                {tripType === 'round' && formData.returnDate && (
+                  <div><span className="text-white">Return:</span> {formData.returnDate} {formData.returnTime}</div>
+                )}
                 <div><span className="text-white">Trip:</span> {tripType === 'oneway' ? 'One Way' : 'Round Trip'}</div>
               </div>
             </div>
 
             <form onSubmit={handleSearchCabs} className="space-y-3">
-              {/* Date and Time Row */}
-              <div className="grid grid-cols-2 gap-3">
-                {/* Pickup Date */}
-                <div className="relative group">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Calendar className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
-                  </div>
-                  <input
-                    type="date"
-                    name="pickupDate"
-                    value={formData.pickupDate}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
-                    }}
-                    required
-                  />
-                </div>
-
-                {/* Pickup Time */}
-                <div className="relative group">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Clock className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
-                  </div>
-                  <input
-                    type="time"
-                    name="pickupTime"
-                    value={formData.pickupTime}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
-                    }}
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Return Date and Time for Round Trip */}
-              {tripType === 'round' && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-3"
+              {/* Car Type Selection */}
+              <div>
+                <label className="block text-white text-sm font-medium mb-2">Select Car Type</label>
+                <select
+                  value={selectedCar}
+                  onChange={(e) => setSelectedCar(e.target.value)}
+                  className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                  }}
+                  required
                 >
-                  <h4 className="text-white text-sm font-medium">Return Details</h4>
-                  
-                  {/* Return Destination */}
-                  <EnhancedLocationInput
-                    name="returnDestination"
-                    value={formData.returnDestination || ''}
-                    onChange={handleInputChange}
-                    placeholder="Return Destination"
-                  />
-
-                  {/* Return Date and Time Row */}
-                  <div className="grid grid-cols-2 gap-3">
-                    {/* Return Date */}
-                    <div className="relative group">
-                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <Calendar className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
-                      </div>
-                      <input
-                        type="date"
-                        name="returnDate"
-                        value={formData.returnDate}
-                        onChange={handleInputChange}
-                        min={formData.pickupDate}
-                        className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
-                        style={{
-                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
-                        }}
-                        required={tripType === 'round'}
-                      />
-                    </div>
-
-                    {/* Return Time */}
-                    <div className="relative group">
-                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <Clock className="h-5 w-5 text-blue-300 group-focus-within:text-blue-400 transition-colors" />
-                      </div>
-                      <input
-                        type="time"
-                        name="returnTime"
-                        value={formData.returnTime}
-                        onChange={handleInputChange}
-                        className="w-full pl-12 pr-3 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm"
-                        style={{
-                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
-                        }}
-                        required={tripType === 'round'}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              )}
+                  <option value="" className="text-gray-800">Choose car type</option>
+                  {carTypes.map((car) => (
+                    <option key={car} value={car} className="text-gray-800">{car}</option>
+                  ))}
+                </select>
+              </div>
 
               <div className="flex gap-3">
                 <motion.button
@@ -543,7 +546,7 @@ export const CabBookingForm = () => {
           </motion.div>
         )}
 
-        {/* Step 2: Pricing Display */}
+        {/* Step 3: Pricing Display */}
         {bookingStep === 'pricing' && (
           <motion.div
             key="pricing"
@@ -585,12 +588,32 @@ export const CabBookingForm = () => {
                     {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
                   </span>
                 </div>
+                <div className="flex justify-between text-blue-100">
+                  <span>Pickup Date:</span>
+                  <span className="text-white font-medium">{formData.pickupDate}</span>
+                </div>
+                <div className="flex justify-between text-blue-100">
+                  <span>Pickup Time:</span>
+                  <span className="text-white font-medium">{formData.pickupTime}</span>
+                </div>
+                {tripType === 'round' && formData.returnDate && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Return Date:</span>
+                    <span className="text-white font-medium">{formData.returnDate}</span>
+                  </div>
+                )}
+                {tripType === 'round' && formData.returnTime && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Return Time:</span>
+                    <span className="text-white font-medium">{formData.returnTime}</span>
+                  </div>
+                )}
               </div>
             </div>
 
             <div className="flex gap-3">
               <motion.button
-                onClick={() => setBookingStep('details')}
+                onClick={() => setBookingStep('basic')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex-1 bg-white/10 text-white py-3 px-6 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300"

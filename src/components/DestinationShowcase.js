@@ -310,9 +310,12 @@ export const DestinationShowcase = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="relative mt-20 overflow-hidden rounded-3xl"
         >
-          {/* CTA Background with Animation */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] opacity-90"></div>
+          {/* CTA Background with Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/asset/Ready for Adventure Home Page Background.png')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
           {/* Floating Elements */}
           <div className="absolute inset-0">

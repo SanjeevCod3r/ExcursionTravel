@@ -198,32 +198,41 @@ export const Services = ({ onBookNow }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-12 md:mt-16 bg-gradient-to-r from-[#0056D2] to-[#43E0F8] rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white mx-4 sm:mx-0"
+          className="text-center mt-12 md:mt-16 relative overflow-hidden rounded-2xl sm:rounded-3xl mx-4 sm:mx-0"
         >
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            Ready to Experience Premium Service?
-          </h3>
-          <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
-            Contact our experts today to customize the perfect transportation solution for your needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => onBookNow?.({})}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#0056D2] font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
-              style={{ fontFamily: 'Manrope, sans-serif' }}
-            >
-              Get Free Consultation
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-sm sm:text-base"
-              style={{ fontFamily: 'Manrope, sans-serif' }}
-            >
-              Call Now: +91 9990-817-615
-            </motion.button>
+          {/* CTA Background with Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/asset/cars backround iamge for homepage.png')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+          
+          <div className="relative z-10 p-6 sm:p-8 text-white">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Ready to Experience Premium Service?
+            </h3>
+            <p className="text-base sm:text-lg mb-4 sm:mb-6 opacity-90 leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Contact our experts today to customize the perfect transportation solution for your needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => onBookNow?.({})}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#0056D2] font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                style={{ fontFamily: 'Manrope, sans-serif' }}
+              >
+                Get Free Consultation
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-sm sm:text-base"
+                style={{ fontFamily: 'Manrope, sans-serif' }}
+              >
+                Call Now: +91 9990-817-615
+              </motion.button>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -15,7 +15,7 @@ export const FleetShowcase = ({ onBookNow }) => {
       category: 'Premium Sedan',
       seats: '4 Passengers',
       features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
-      image: '/asset/Toyota Vellfire.png',
+      image: '/asset/Fleet Showcase Toyota Vellfire.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Crown
@@ -25,7 +25,7 @@ export const FleetShowcase = ({ onBookNow }) => {
       category: 'Luxury SUV',
       seats: '7 Passengers',
       features: ['Spacious Interior', 'Family Comfort', 'Reliable Performance'],
-      image: '/asset/Mercedes GLS.png',
+      image: '/asset/Fleet Showcase Mercedes GLS.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Users
@@ -35,7 +35,7 @@ export const FleetShowcase = ({ onBookNow }) => {
       category: 'Premium MUV',
       seats: '7 Passengers',
       features: ['Spacious Interior', 'Family Comfort', 'Reliable Performance'],
-      image: '/asset/Toyota Innova Hycross.png',
+      image: '/asset/Fleet Showcase Toyota Innova Hycross.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Users
@@ -45,7 +45,7 @@ export const FleetShowcase = ({ onBookNow }) => {
       category: 'Luxury Sedan',
       seats: '4 Passengers',
       features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
-      image: '/asset/Mercedes S Class.png',
+      image: '/asset/Fleet Showcase Mercedes S Class.png',
       color: 'from-[#0056D2] to-[#43E0F8]',
       bgGradient: 'from-[#0056D2]/5 to-[#43E0F8]/5',
       icon: Crown
@@ -326,9 +326,12 @@ export const FleetShowcase = ({ onBookNow }) => {
           transition={{ duration: 1, delay: 1 }}
           className="relative mt-20 overflow-hidden rounded-3xl"
         >
-          {/* CTA Background with Animation */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0056D2] via-[#43E0F8] to-[#5DFDCB] opacity-90"></div>
+          {/* CTA Background with Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/asset/Home Page Discover Your Perfect Ride Image.jpg')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
 
           {/* Animated Background Shapes */}
           <div className="absolute inset-0">
