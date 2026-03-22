@@ -9,7 +9,18 @@ export const pricingData = {
       nightCharges: 300,
       outstationMinKms: 250,
       outstationRate: 18,
-      driverAllowance: 300
+      driverAllowance: 300,
+      localPackages: {
+        '2hr-20km': 800,
+        '3hr-30km': 1000,
+        '4hr-40km': 1200,
+        '5hr-50km': 1400,
+        '6hr-60km': 1600,
+        '7hr-70km': 1800,
+        '8hr-80km': 2000,
+        '9hr-90km': 2200,
+        '10hr-100km': 2400
+      }
     },
     'SUV': {
       baseCharge: 2000,
@@ -20,7 +31,18 @@ export const pricingData = {
       nightCharges: 400,
       outstationMinKms: 250,
       outstationRate: 22,
-      driverAllowance: 400
+      driverAllowance: 400,
+      localPackages: {
+        '2hr-20km': 1200,
+        '3hr-30km': 1400,
+        '4hr-40km': 1600,
+        '5hr-50km': 1800,
+        '6hr-60km': 2000,
+        '7hr-70km': 2200,
+        '8hr-80km': 2400,
+        '9hr-90km': 2600,
+        '10hr-100km': 2800
+      }
     },
     'Premium Sedan': {
       baseCharge: 2200,
@@ -31,7 +53,18 @@ export const pricingData = {
       nightCharges: 400,
       outstationMinKms: 250,
       outstationRate: 24,
-      driverAllowance: 400
+      driverAllowance: 400,
+      localPackages: {
+        '2hr-20km': 1400,
+        '3hr-30km': 1600,
+        '4hr-40km': 1800,
+        '5hr-50km': 2000,
+        '6hr-60km': 2200,
+        '7hr-70km': 2400,
+        '8hr-80km': 2600,
+        '9hr-90km': 2800,
+        '10hr-100km': 3000
+      }
     },
     'Premium SUV': {
       baseCharge: 3000,
@@ -42,7 +75,18 @@ export const pricingData = {
       nightCharges: 500,
       outstationMinKms: 250,
       outstationRate: 30,
-      driverAllowance: 500
+      driverAllowance: 500,
+      localPackages: {
+        '2hr-20km': 1800,
+        '3hr-30km': 2000,
+        '4hr-40km': 2200,
+        '5hr-50km': 2400,
+        '6hr-60km': 2600,
+        '7hr-70km': 2800,
+        '8hr-80km': 3000,
+        '9hr-90km': 3200,
+        '10hr-100km': 3400
+      }
     },
     'Luxury': {
       baseCharge: 5000,
@@ -53,7 +97,18 @@ export const pricingData = {
       nightCharges: 1000,
       outstationMinKms: 250,
       outstationRate: 50,
-      driverAllowance: 1000
+      driverAllowance: 1000,
+      localPackages: {
+        '2hr-20km': 3000,
+        '3hr-30km': 3200,
+        '4hr-40km': 3400,
+        '5hr-50km': 3600,
+        '6hr-60km': 3800,
+        '7hr-70km': 4000,
+        '8hr-80km': 4200,
+        '9hr-90km': 4400,
+        '10hr-100km': 4600
+      }
     },
     'Tempo Traveller': {
       baseCharge: 3500,
@@ -64,7 +119,18 @@ export const pricingData = {
       nightCharges: 700,
       outstationMinKms: 250,
       outstationRate: 35,
-      driverAllowance: 700
+      driverAllowance: 700,
+      localPackages: {
+        '2hr-20km': 2000,
+        '3hr-30km': 2200,
+        '4hr-40km': 2400,
+        '5hr-50km': 2600,
+        '6hr-60km': 2800,
+        '7hr-70km': 3000,
+        '8hr-80km': 3200,
+        '9hr-90km': 3400,
+        '10hr-100km': 3600
+      }
     }
   },
   'Mumbai': {

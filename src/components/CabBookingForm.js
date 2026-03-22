@@ -14,6 +14,7 @@ export const CabBookingForm = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [calculatedPrice, setCalculatedPrice] = useState(0);
   const [bookingStep, setBookingStep] = useState('basic'); // 'basic', 'details', 'pricing', 'userDetails', 'confirmation'
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   
   // Auto-set trip type to oneway when airport or local is selected
   useEffect(() => {
@@ -29,7 +30,8 @@ export const CabBookingForm = () => {
     pickupTime: '',
     returnDestination: '',
     returnDate: '',
-    returnTime: ''
+    returnTime: '',
+    localPackage: ''
   });
 
   const [userDetails, setUserDetails] = useState({
@@ -37,6 +39,19 @@ export const CabBookingForm = () => {
     email: '',
     phone: ''
   });
+
+  // Local packages options
+  const localPackages = [
+    { id: '2hr-20km', label: '2Hr. 20Km.', hours: 2, km: 20 },
+    { id: '3hr-30km', label: '3Hr. 30Km.', hours: 3, km: 30 },
+    { id: '4hr-40km', label: '4Hr. 40Km.', hours: 4, km: 40 },
+    { id: '5hr-50km', label: '5Hr. 50Km.', hours: 5, km: 50 },
+    { id: '6hr-60km', label: '6Hr. 60Km', hours: 6, km: 60 },
+    { id: '7hr-70km', label: '7Hr. 70Km.', hours: 7, km: 70 },
+    { id: '8hr-80km', label: '8Hr. 80Km.', hours: 8, km: 80 },
+    { id: '9hr-90km', label: '9Hr. 90Km.', hours: 9, km: 90 },
+    { id: '10hr-100km', label: '10Hr. 100Km.', hours: 10, km: 100 }
+  ];
 
   const tabs = [
     { id: 'outstation', label: 'OutStation' },
@@ -81,13 +96,19 @@ export const CabBookingForm = () => {
     const carPricing = cityPricing[selectedCar];
     let basePrice = carPricing.baseCharge;
     
+    // For local trips, use package pricing
+    if (activeTab === 'local' && formData.localPackage) {
+      if (carPricing.localPackages && carPricing.localPackages[formData.localPackage]) {
+        basePrice = carPricing.localPackages[formData.localPackage];
+      }
+    }
     // For outstation trips, use minimum charge
-    if (activeTab === 'outstation') {
+    else if (activeTab === 'outstation') {
       basePrice = Math.max(basePrice, carPricing.outstationMinKms * carPricing.outstationRate);
     }
     
-    // For round trips, double the base price
-    if (tripType === 'round') {
+    // For round trips, double the base price (only for outstation)
+    if (tripType === 'round' && activeTab === 'outstation') {
       basePrice = basePrice * 2;
     }
     
@@ -110,9 +131,25 @@ export const CabBookingForm = () => {
 
   const handleBasicNext = (e) => {
     e.preventDefault();
-    if (!formData.pickupLocation || !formData.destination) {
-      alert('Please fill all location details');
+    
+    // Validate pickup location (required for all)
+    if (!formData.pickupLocation) {
+      alert('Please enter pickup location');
       return;
+    }
+    
+    // For local travel, require package selection instead of destination
+    if (activeTab === 'local') {
+      if (!formData.localPackage) {
+        alert('Please select a package');
+        return;
+      }
+    } else {
+      // For outstation and airport, require destination
+      if (!formData.destination) {
+        alert('Please enter destination');
+        return;
+      }
     }
     
     // Require airport direction when airport is selected
@@ -163,27 +200,33 @@ export const CabBookingForm = () => {
       price: calculatedPrice
     });
     
-    alert('Booking confirmed! We will contact you shortly.');
+    // Show success popup instead of alert
+    setShowSuccessPopup(true);
     
-    // Reset form
-    setFormData({
-      pickupLocation: '',
-      destination: '',
-      pickupDate: '',
-      pickupTime: '',
-      returnDestination: '',
-      returnDate: '',
-      returnTime: ''
-    });
-    setUserDetails({
-      name: '',
-      email: '',
-      phone: ''
-    });
-    setSelectedCar('');
-    setAirportDirection('');
-    setBookingStep('basic');
-    setShowConfirmation(false);
+    // Reset form after showing popup
+    setTimeout(() => {
+      setFormData({
+        pickupLocation: '',
+        destination: '',
+        pickupDate: '',
+        pickupTime: '',
+        returnDestination: '',
+        returnDate: '',
+        returnTime: '',
+        localPackage: ''
+      });
+      setUserDetails({
+        name: '',
+        email: '',
+        phone: ''
+      });
+      setSelectedCar('');
+      setBookingStep('basic');
+      setActiveTab('outstation');
+      setTripType('oneway');
+      setAirportDirection('');
+      setCalculatedPrice(0);
+    }, 2000); // Reset after 2 seconds
   };
 
   return (
@@ -362,14 +405,53 @@ export const CabBookingForm = () => {
                 required
               />
 
-              {/* Destination */}
-              <EnhancedLocationInput
-                name="destination"
-                value={formData.destination}
-                onChange={handleInputChange}
-                placeholder="Your Destination"
-                required
-              />
+              {/* Destination - Only show for OutStation and Airport */}
+              {activeTab !== 'local' && (
+                <EnhancedLocationInput
+                  name="destination"
+                  value={formData.destination}
+                  onChange={handleInputChange}
+                  placeholder="Your Destination"
+                  required
+                />
+              )}
+
+              {/* Local Package Selection - Only show for Local */}
+              {activeTab === 'local' && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-4"
+                >
+                  <label className="block text-white text-sm font-medium mb-2">Select Package</label>
+                  <div className="relative">
+                    <select
+                      name="localPackage"
+                      value={formData.localPackage}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent text-white backdrop-blur-sm transition-all duration-300 text-sm appearance-none cursor-pointer"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)'
+                      }}
+                      required
+                    >
+                      <option value="" className="bg-gray-800 text-white">Choose a package...</option>
+                      {localPackages.map((pkg) => (
+                        <option key={pkg.id} value={pkg.id} className="bg-gray-800 text-white">
+                          {pkg.label}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                      <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
 
               {/* Date and Time Selection */}
               <div className="mb-4">
@@ -798,6 +880,104 @@ export const CabBookingForm = () => {
             >
               Confirm Booking
             </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Success Popup */}
+      <AnimatePresence>
+        {showSuccessPopup && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3, type: 'spring' }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+            onClick={() => setShowSuccessPopup(false)}
+          >
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -50, opacity: 0 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="bg-white rounded-3xl p-8 max-w-md mx-4 text-center shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Success Icon */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <motion.div
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ delay: 0.4, duration: 0.6, ease: 'easeInOut' }}
+                  className="w-10 h-10"
+                >
+                  <svg
+                    className="w-full h-full text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <motion.path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </motion.div>
+              </motion.div>
+
+              {/* Success Message */}
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+                className="text-2xl font-bold text-gray-800 mb-3"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
+              >
+                Booking Confirmed!
+              </motion.h3>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.4 }}
+                className="text-gray-600 mb-6"
+                style={{ fontFamily: 'Manrope, sans-serif' }}
+              >
+                Thank you for choosing Excursion Travel! We will contact you shortly with your booking details.
+              </motion.p>
+
+              {/* Booking Reference */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.4 }}
+                className="bg-blue-50 rounded-xl p-4 mb-6"
+              >
+                <p className="text-sm text-blue-600 font-medium">Booking Reference</p>
+                <p className="text-lg font-bold text-blue-800">ET-{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
+              </motion.div>
+
+              {/* Close Button */}
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowSuccessPopup(false)}
+                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg"
+                style={{ fontFamily: 'Manrope, sans-serif' }}
+              >
+                Done
+              </motion.button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
