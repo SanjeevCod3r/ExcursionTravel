@@ -13,7 +13,7 @@ export const FleetShowcase = ({ onBookNow }) => {
     {
       name: 'Toyota Vellfire',
       category: 'Premium Sedan',
-      seats: '4 Passengers',
+      seats: '7 Passengers',
       features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
       image: '/asset/Fleet Showcase Toyota Vellfire.png',
       color: 'from-[#0056D2] to-[#43E0F8]',

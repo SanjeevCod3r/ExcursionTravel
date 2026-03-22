@@ -55,7 +55,7 @@ export const CabBookingForm = () => {
 
   const tabs = [
     { id: 'outstation', label: 'OutStation' },
-    { id: 'local', label: 'Local' },
+    { id: 'local', label: 'Hourly' },
     { id: 'airport', label: 'Airport' }
   ];
 
@@ -576,12 +576,15 @@ export const CabBookingForm = () => {
             <div className="bg-white/5 rounded-xl p-3 mb-4 backdrop-blur-sm">
               <div className="text-xs text-blue-200 space-y-1">
                 <div><span className="text-white">From:</span> {formData.pickupLocation}</div>
-                <div><span className="text-white">To:</span> {formData.destination}</div>
+                {activeTab !== 'local' && <div><span className="text-white">To:</span> {formData.destination}</div>}
+                {activeTab === 'local' && formData.localPackage && (
+                  <div><span className="text-white">Package:</span> {localPackages.find(p => p.id === formData.localPackage)?.label}</div>
+                )}
                 <div><span className="text-white">Date:</span> {formData.pickupDate} {formData.pickupTime}</div>
                 {tripType === 'round' && formData.returnDate && (
                   <div><span className="text-white">Return:</span> {formData.returnDate} {formData.returnTime}</div>
                 )}
-                <div><span className="text-white">Trip:</span> {tripType === 'oneway' ? 'One Way' : 'Round Trip'}</div>
+                {activeTab !== 'local' && <div><span className="text-white">Trip:</span> {tripType === 'oneway' ? 'One Way' : 'Round Trip'}</div>}
               </div>
             </div>
 
@@ -650,7 +653,7 @@ export const CabBookingForm = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between text-blue-100">
                   <span>Service Type:</span>
-                  <span className="text-white font-medium capitalize">{activeTab}</span>
+                  <span className="text-white font-medium capitalize">{activeTab === 'local' ? 'hourly' : activeTab}</span>
                 </div>
                 {activeTab === 'airport' && airportDirection && (
                   <div className="flex justify-between text-blue-100">
@@ -664,12 +667,22 @@ export const CabBookingForm = () => {
                   <span>Car Type:</span>
                   <span className="text-white font-medium">{selectedCar}</span>
                 </div>
-                <div className="flex justify-between text-blue-100">
-                  <span>Trip Type:</span>
-                  <span className="text-white font-medium">
-                    {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
-                  </span>
-                </div>
+                {activeTab !== 'local' && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Trip Type:</span>
+                    <span className="text-white font-medium">
+                      {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
+                    </span>
+                  </div>
+                )}
+                {activeTab === 'local' && formData.localPackage && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Package:</span>
+                    <span className="text-white font-medium">
+                      {localPackages.find(p => p.id === formData.localPackage)?.label}
+                    </span>
+                  </div>
+                )}
                 <div className="flex justify-between text-blue-100">
                   <span>Pickup Date:</span>
                   <span className="text-white font-medium">{formData.pickupDate}</span>
@@ -835,20 +848,32 @@ export const CabBookingForm = () => {
                   <span>Phone:</span>
                   <span className="text-white font-medium">{userDetails.phone}</span>
                 </div>
-                <div className="flex justify-between text-blue-100">
-                  <span>Trip Type:</span>
-                  <span className="text-white font-medium">
-                    {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
-                  </span>
-                </div>
+                {activeTab !== 'local' && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Trip Type:</span>
+                    <span className="text-white font-medium">
+                      {activeTab === 'airport' ? 'Airport Transfer' : (tripType === 'oneway' ? 'One Way' : 'Round Trip')}
+                    </span>
+                  </div>
+                )}
+                {activeTab === 'local' && formData.localPackage && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Package:</span>
+                    <span className="text-white font-medium">
+                      {localPackages.find(p => p.id === formData.localPackage)?.label}
+                    </span>
+                  </div>
+                )}
                 <div className="flex justify-between text-blue-100">
                   <span>Pickup:</span>
                   <span className="text-white font-medium">{formData.pickupLocation}</span>
                 </div>
-                <div className="flex justify-between text-blue-100">
-                  <span>Destination:</span>
-                  <span className="text-white font-medium">{formData.destination}</span>
-                </div>
+                {activeTab !== 'local' && (
+                  <div className="flex justify-between text-blue-100">
+                    <span>Destination:</span>
+                    <span className="text-white font-medium">{formData.destination}</span>
+                  </div>
+                )}
                 <div className="flex justify-between text-blue-100">
                   <span>Pickup Date & Time:</span>
                   <span className="text-white font-medium">{formData.pickupDate} {formData.pickupTime}</span>

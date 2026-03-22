@@ -5,10 +5,11 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'luc
 
 export const Footer = () => {
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Vendor Registration', href: '/vendor-registration' }
   ];
 
   const services = [
@@ -86,14 +87,14 @@ export const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-400 hover:text-[#43E0F8] transition-colors duration-300 inline-block hover:translate-x-2 transform"
                     style={{ fontFamily: 'Manrope, sans-serif' }}
                     data-testid={`footer-quick-link-${link.name.toLowerCase()}`}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -180,9 +181,7 @@ export const Footer = () => {
                   <div className="text-xs bg-gradient-to-r from-blue-600/20 to-cyan-600/20 px-3 py-2 rounded-lg border border-blue-500/30 text-gray-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
                     <span className="font-semibold text-blue-400">GSTIN:</span> 09DLIPR0084K1ZL
                   </div>
-                  <div className="text-xs bg-gradient-to-r from-blue-600/20 to-cyan-600/20 px-3 py-2 rounded-lg border border-blue-500/30 text-gray-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                    <span className="font-semibold text-blue-400">PAN:</span> DLIPR0084K
-                  </div>
+
                 </div>
               </li>
             </ul>
@@ -197,31 +196,37 @@ export const Footer = () => {
           className="pt-8 border-t border-white/10"
           data-testid="footer-bottom-bar"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p
-              className="text-gray-400 text-sm"
-              style={{ fontFamily: 'Manrope, sans-serif' }}
-              data-testid="footer-copyright"
-            >
-              © {new Date().getFullYear()} Excursion Travel. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="/privacy"
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex gap-6 w-full md:w-1/3 justify-center md:justify-start">
+              <Link
+                to="/privacy"
                 className="text-gray-400 hover:text-[#43E0F8] transition-colors text-sm"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
                 data-testid="footer-privacy-policy"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="/terms"
+              </Link>
+            </div>
+            
+            <div className="w-full md:w-1/3 text-center">
+              <p
+                className="text-gray-400 text-sm inline-block"
+                style={{ fontFamily: 'Manrope, sans-serif' }}
+                data-testid="footer-copyright"
+              >
+                © {new Date().getFullYear()} Excursion Travel. All rights reserved.
+              </p>
+            </div>
+
+            <div className="w-full md:w-1/3 flex justify-center md:justify-end">
+              <Link
+                to="/terms"
                 className="text-gray-400 hover:text-[#43E0F8] transition-colors text-sm"
                 style={{ fontFamily: 'Manrope, sans-serif' }}
                 data-testid="footer-terms-conditions"
               >
                 Terms & Conditions
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

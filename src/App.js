@@ -11,6 +11,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { TermsPage } from "./pages/TermsPage";
 import { PackageDetailPage } from "./pages/PackageDetailPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
+import { VendorRegistrationPage } from "./pages/VendorRegistrationPage";
 import { ServiceDetail } from "./components/ServiceDetail";
 import { Loader } from "./components/Loader";
 import FloatingChat from "./components/FloatingChat";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/vendor-registration" element={<VendorRegistrationPage />} />
         </Routes>
         <FloatingChat />
       </div>
