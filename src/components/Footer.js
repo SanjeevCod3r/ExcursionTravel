@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -11,19 +12,18 @@ export const Footer = () => {
   ];
 
   const services = [
-    'Corporate Car Rental',
-    'Employee Transport',
-    'Executive Transportation',
-    'Group Transportation',
-    'Event Mobility',
-    'Outstation Travel'
+    { name: 'Corporate Car Rental', href: '/service/corporate-car-rental' },
+    { name: 'Employee Transport Services', href: '/service/employee-transport' },
+    { name: 'Event Transportation', href: '/service/event-transportation' },
+    { name: 'Conferences & Delegation', href: '/service/conferences-delegation' },
+    { name: 'Wedding Car Rental', href: '/service/wedding-car-rental' },
+    { name: 'Hotel Travel Desk Service', href: '/service/hotel-travel-desk' }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' }
+    { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61571593164736&mibextid=rS40aB7S9Ucbxw6v', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/excursiontravel.in?igsh=OWl2N2tzc3Frdjl4', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/excursiontravel?trk=blended-typeahead', label: 'LinkedIn' }
   ];
 
   return (
@@ -115,16 +115,16 @@ export const Footer = () => {
               Our Services
             </h4>
             <ul className="space-y-3">
-              {services.slice(0, 6).map((service, index) => (
+              {services.map((service, index) => (
                 <li key={index}>
-                  <a
-                    href="#services"
+                  <Link
+                    to={service.href}
                     className="text-gray-400 hover:text-[#43E0F8] transition-colors duration-300 inline-block hover:translate-x-2 transform text-sm"
                     style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid={`footer-service-${index}`}
+                    data-testid={`footer-service-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
                   >
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -168,14 +168,21 @@ export const Footer = () => {
                   >
                     contact@excursiontravel.in
                   </a>
-                  <a
-                    href="mailto:bipin@excursiontravel.in"
-                    className="text-gray-400 hover:text-[#43E0F8] transition-colors block mt-1 text-sm"
-                    style={{ fontFamily: 'Manrope, sans-serif' }}
-                    data-testid="footer-email-bipin"
-                  >
-                    bipin@excursiontravel.in
-                  </a>
+                </div>
+              </li>
+              
+              {/* Business Registration Details */}
+              <li className="pt-4 mt-4 border-t border-gray-700">
+                <div className="space-y-2">
+                  <div className="text-xs bg-gradient-to-r from-blue-600/20 to-cyan-600/20 px-3 py-2 rounded-lg border border-blue-500/30 text-gray-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <span className="font-semibold text-blue-400">UDYAM REGISTRATION:</span> UDYAM-UP-33-0019624
+                  </div>
+                  <div className="text-xs bg-gradient-to-r from-blue-600/20 to-cyan-600/20 px-3 py-2 rounded-lg border border-blue-500/30 text-gray-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <span className="font-semibold text-blue-400">GSTIN:</span> 09DLIPR0084K1ZL
+                  </div>
+                  <div className="text-xs bg-gradient-to-r from-blue-600/20 to-cyan-600/20 px-3 py-2 rounded-lg border border-blue-500/30 text-gray-300" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <span className="font-semibold text-blue-400">PAN:</span> DLIPR0084K
+                  </div>
                 </div>
               </li>
             </ul>
