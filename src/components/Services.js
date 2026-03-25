@@ -9,7 +9,7 @@ export const Services = ({ onBookNow }) => {
       id: 'corporate-car-rental',
       icon: Car,
       title: 'Corporate Car Rental',
-      shortDescription: 'Premium vehicles with professional chauffeurs for executive travel and business meetings.',
+      shortDescription: 'Executive-class vehicles with professional chauffeurs, delivering comfort, punctuality, and reliability for business travel.',
       color: 'from-[#0056D2] to-[#43E0F8]',
       image: '/asset/Corporate Car Rental Image 2.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
@@ -27,7 +27,7 @@ export const Services = ({ onBookNow }) => {
       id: 'event-transportation',
       icon: Calendar,
       title: 'Event Transportation',
-      shortDescription: 'Comprehensive transportation management for corporate events, conferences, and roadshows.',
+      shortDescription: 'End-to-end transport solutions for corporate events, conferences, and roadshows with seamless coordination and reliable service.',
       color: 'from-[#FE805A] to-[#FE6B47]',
       image: '/asset/Event Transportation Image 1.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
@@ -45,7 +45,7 @@ export const Services = ({ onBookNow }) => {
       id: 'wedding-car-rental',
       icon: Heart,
       title: 'Wedding Car Rental',
-      shortDescription: 'Luxury sedans and coaches for conferences, events, and corporate outings with flexible scheduling.',
+      shortDescription: 'Luxury cars and premium vehicles for weddings, ensuring elegant, comfortable, and timely travel for the couple and guests.',
       color: 'from-[#0056D2] to-[#5DFDCB]',
       image: '/asset/Wedding Car Rental Image 1.jpeg',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
@@ -54,7 +54,7 @@ export const Services = ({ onBookNow }) => {
       id: 'hotel-travel-desk',
       icon: MapPin,
       title: 'Hotel Travel Desk Service',
-      shortDescription: 'Long-distance corporate travel with well-maintained vehicles and professional drivers.',
+      shortDescription: 'Reliable hotel travel desk services providing comfortable and professional transportation for guests.',
       color: 'from-[#FE805A] to-[#0056D2]',
       image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600',
       features: ['Spacious Interiors', 'Tailored for Business', 'Modern Features', 'Professional Chauffeurs', 'Impeccable Maintenance', 'Flexible Scheduling']
