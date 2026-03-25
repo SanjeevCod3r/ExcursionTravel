@@ -12,7 +12,7 @@ export const FleetShowcase = ({ onBookNow }) => {
   const featuredVehicles = [
     {
       name: 'Toyota Vellfire',
-      category: 'Premium Sedan',
+      category: 'Luxury Van',
       seats: '7 Passengers',
       features: ['Premium Interior', 'Advanced Safety', 'Executive Comfort'],
       image: '/asset/Fleet Showcase Toyota Vellfire.png',
